@@ -1,0 +1,32 @@
+<h1>Gerenciador de notícias</h1>
+<h2>Notícias recentes</h2>
+<p>Clique no título da notícia para expandir</p>
+<div>
+  <ul>
+    <li *ngFor="let noticia of noticias">
+      <p (click)="mostrar(noticia)">{{ noticia.titulo }}</p>
+      <p *ngIf="noticia.visivel">
+        {{ noticia.conteudo }}
+        <br> -------------
+        <br>
+        <button (click)="fechar(noticia)">Fechar</button>
+      </p>
+    </li>
+  </ul>
+</div>
+
+<h2>Cadastrar notícia</h2>
+<form #cadastro="ngForm" (submit)="salvar()">
+  <div>
+    <label for="titulo">Título</label>
+    <input type="text" id="titulo" name="titulo" [(ngModel)]="titulo" required>
+  </div>
+  <div>
+    <label for="conteudo">Conteúdo</label>
+    <textarea id="conteudo" name="conteudo" cols="80" rows="5" [(ngModel)]="conteudo" required></textarea>
+  </div>
+  <div>
+    <button type="submit" [disabled]="!cadastro.form.valid">Salvar</button>
+    <button type="reset" formnovalidate>Limpar</button>
+  </div>
+</form>
