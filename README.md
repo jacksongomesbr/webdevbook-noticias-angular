@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
+## Versão em produção
+
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -25,3 +29,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Gerando a documentação
+
+A documentação deste projeto utiliza [compodoc](https://compodoc.app/). Para gerar ou atualizar a documentação execute `npm run build-docs`. Para gerar a documentação e acessá-la por meio do servidor local execute `npm run serve-docs` e acesse `http://localhost:8080`.
