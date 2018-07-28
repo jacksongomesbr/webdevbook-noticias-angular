@@ -4,10 +4,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Versão em produção
 
+<<<<<<< HEAD
 Há uma versão em produção no **Stackblitz** para cada branch:
 
 * **master**: https://stackblitz.com/github/jacksongomesbr/webdevbook-noticias-angular/
 * **crud-telas**: https://stackblitz.com/github/jacksongomesbr/webdevbook-noticias-angular/tree/crud-telas
+=======
+
+>>>>>>> 87a44e8a92a12d4b8d05382dbebd9c4c8fd4a6e1
 
 ## Development server
 
