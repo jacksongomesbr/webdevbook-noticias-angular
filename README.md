@@ -2,12 +2,17 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
+## Documentação
+
+A documentação deste projeto pode ser acessada em [https://jacksongomesbr.github.io/webdevbook-noticias-angular/].
+
 ## Versão em produção
 
 Há uma versão em produção no **Stackblitz** para cada branch:
 
 * **master**: https://stackblitz.com/github/jacksongomesbr/webdevbook-noticias-angular/
 * **crud-telas**: https://stackblitz.com/github/jacksongomesbr/webdevbook-noticias-angular/tree/crud-telas
+* **inicio**: https://stackblitz.com/github/jacksongomesbr/webdevbook-noticias-angular/tree/inicio
 
 ## Development server
 
