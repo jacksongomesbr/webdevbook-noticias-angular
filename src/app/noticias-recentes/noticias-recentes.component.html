@@ -1,0 +1,8 @@
+<h2>Notícias recentes</h2>
+<p>Clique no título da notícia para ler o conteúdo</p>
+<div id="lista-noticias">
+  <div class="lista-noticias-item" *ngFor="let noticia of noticias" (click)="mostrar(noticia)">
+    <div class="lista-noticias-titulo">{{ noticia.titulo }}</div>
+    <div class="lista-noticias-info">Por {{ noticia.autor }} em {{ noticia.data | date }}</div>
+  </div>
+</div>
