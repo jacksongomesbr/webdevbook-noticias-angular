@@ -137,7 +137,7 @@ export class AppComponent implements OnInit {
    * Apresenta uma notícia (tela de leitura)
    * @param noticia A notícia que deve ter o conteúdo apresentado
    */
-  mostrar(noticia) {
+  onMostrou(noticia) {
     this.leituraNoticia = noticia;
     this.irPara('leitura');
   }

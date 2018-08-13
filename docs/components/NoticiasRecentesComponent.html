@@ -289,190 +289,448 @@
 </nav>
                </div>
                <!-- START CONTENT -->
-               <div class="content miscellaneous-variables">
+               <div class="content component">
                    <div class="content-data">
 
 
 
 
-
-
-
-
-
-
-
-
-
 <ol class="breadcrumb">
-  <li>Miscellaneous</li>
-  <li>Variables</li>
+  <li>Components</li>
+  <li>NoticiasRecentesComponent</li>
 </ol>
 
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/noticias-recentes/noticias-recentes.component.ts</code>
+</p>
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente que implementa a funcionalidade de apresentar a lista de notícias recentes.</p>
+<p>O componente recebe como entrada a lista de notícias. Cada item da lista pode ser clicado e,
+quando isso acontecer, o componente dispara um evento para permitir o componente host,
+saber qual notícia foi clicada e executar alguma lógica a partir disso.</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
 <section>
-    <h3 id="index">Index</h3>
-    <table class="table table-sm table-bordered index-table">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
         <tbody>
+
+
+
+
+
+
+
+
+
+
+
             <tr>
-                <td class="col-md-4">
-                    <ul class="index-list">
-                        <li>
-                            <a href="#context" title="src/test.ts"><b>context</b>&nbsp;&nbsp;&nbsp;(src/.../test.ts)</a>
-                        </li>
-                        <li>
-                            <a href="#environment" title="src/environments/environment.ts"><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.ts)</a>
-                        </li>
-                        <li>
-                            <a href="#environment" title="src/environments/environment.prod.ts"><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.prod.ts)</a>
-                        </li>
-                        <li>
-                            <a href="#require" title="src/test.ts"><b>require</b>&nbsp;&nbsp;&nbsp;(src/.../test.ts)</a>
-                        </li>
-                    </ul>
-                </td>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-noticias-recentes</code></td>
             </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>noticias-recentes.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./noticias-recentes.component.html</code></td>
+            </tr>
+
+
         </tbody>
     </table>
 </section>
 
-    <h3>src/test.ts</h3>
     <section>
-    <h3></h3>        <table class="table table-sm table-bordered">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#mostrar">mostrar</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#noticias">noticias</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#mostrou">mostrou</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="context"></a>
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/noticias-recentes/noticias-recentes.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="noticias"></a>
+                        <code>noticias</code>
+                    </td>
+                    <td class="col-md-10">
+                        <div><p>A propriedade de entrada que representa a lista de notícias que devem ser apresentadas</p>
+</div>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/noticias-recentes/noticias-recentes.component.ts:22</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="mostrou"></a>
+                        <code>mostrou</code>
+                    </td>
+                    <td class="col-md-10">
+                        <div><p>O evento que permite o componente host saber quando e qual notícia foi clicada</p>
+</div>
+                        <em><code>$event</code> type:</em>    <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/noticias-recentes/noticias-recentes.component.ts:28</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mostrar"></a>
                         <span class="name">
                             <b>
-                            context
+                            mostrar
                             </b>
-                            <a href="#context"><span class="fa fa-link"></span></a>
+                            <a href="#mostrar"><span class="fa fa-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <code>context:     <code></code>
-</code>
+<code>mostrar(noticia: )</code>
                     </td>
                 </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>require.context(&#x27;./&#x27;, true, /\.spec\.ts$/)</code>
-                        </td>
-                    </tr>
 
 
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/noticias-recentes/noticias-recentes.component.ts:43</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Método utilizado como tratador para o evento <code>mostrou</code>. </p>
+<p>O parâmetro <code>noticia</code> é informado para o componente host por meio do método <code>emit()</code>
+do atributo <code>mostrou</code>.</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>noticia</td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>A notícia que foi clicada pelo usuário</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="require"></a>
+                        <a name="ngOnInit"></a>
                         <span class="name">
                             <b>
-                            require
+                            ngOnInit
                             </b>
-                            <a href="#require"><span class="fa fa-link"></span></a>
+                            <a href="#ngOnInit"><span class="fa fa-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <code>require:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-</code>
+<code>ngOnInit()</code>
                     </td>
                 </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                        </td>
-                    </tr>
 
 
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/noticias-recentes/noticias-recentes.component.ts:32</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
-    <h3>src/environments/environment.ts</h3>
-    <section>
-    <h3></h3>        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="environment"></a>
-                        <span class="name">
-                            <b>
-                            environment
-                            </b>
-                            <a href="#environment"><span class="fa fa-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>environment:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
-</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>{
-  production: false
-}</code>
-                        </td>
-                    </tr>
 
 
-            </tbody>
-        </table>
-</section>
-    <h3>src/environments/environment.prod.ts</h3>
-    <section>
-    <h3></h3>        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="environment"></a>
-                        <span class="name">
-                            <b>
-                            environment
-                            </b>
-                            <a href="#environment"><span class="fa fa-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>environment:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
-</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>{
-  production: true
-}</code>
-                        </td>
-                    </tr>
+</div>
 
 
-            </tbody>
-        </table>
-</section>
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input, Output, EventEmitter } from &#x27;@angular/core&#x27;;
+import { Noticia } from &#x27;../noticia.model&#x27;;
+
+/**
+ * Componente que implementa a funcionalidade de apresentar a lista de notícias recentes.
+ * 
+ * O componente recebe como entrada a lista de notícias. Cada item da lista pode ser clicado e,
+ * quando isso acontecer, o componente dispara um evento para permitir o componente host,
+ * saber qual notícia foi clicada e executar alguma lógica a partir disso.
+ */
+@Component({
+  selector: &#x27;app-noticias-recentes&#x27;,
+  templateUrl: &#x27;./noticias-recentes.component.html&#x27;,
+  styleUrls: [&#x27;./noticias-recentes.component.css&#x27;]
+})
+export class NoticiasRecentesComponent implements OnInit {
+
+  /**
+   * A propriedade de entrada que representa a lista de notícias que devem ser apresentadas
+   */
+  @Input()
+  noticias;
+
+  /**
+   * O evento que permite o componente host saber quando e qual notícia foi clicada
+   */
+  @Output()
+  mostrou &#x3D; new EventEmitter&lt;Noticia&gt;();
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+  /**
+   * Método utilizado como tratador para o evento &#x60;mostrou&#x60;. 
+   * 
+   * O parâmetro &#x60;noticia&#x60; é informado para o componente host por meio do método &#x60;emit()&#x60;
+   * do atributo &#x60;mostrou&#x60;.
+   * 
+   * @param noticia A notícia que foi clicada pelo usuário
+   */
+  mostrar(noticia) {
+    this.mostrou.emit(noticia);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;h2&gt;Notícias recentes&lt;/h2&gt;
+&lt;p&gt;Clique no título da notícia para ler o conteúdo&lt;/p&gt;
+&lt;div id&#x3D;&quot;lista-noticias&quot;&gt;
+  &lt;div class&#x3D;&quot;lista-noticias-item&quot; *ngFor&#x3D;&quot;let noticia of noticias&quot; (click)&#x3D;&quot;mostrar(noticia)&quot;&gt;
+    &lt;div class&#x3D;&quot;lista-noticias-titulo&quot;&gt;{{ noticia.titulo }}&lt;/div&gt;
+    &lt;div class&#x3D;&quot;lista-noticias-info&quot;&gt;Por {{ noticia.autor }} em {{ noticia.data | date }}&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><h2>Notícias recentes</h2><p>Clique no título da notícia para ler o conteúdo</p><div id="lista-noticias">  <div class="lista-noticias-item" *ngFor="let noticia of noticias" (click)="mostrar(noticia)">    <div class="lista-noticias-titulo">{{ noticia.titulo }}</div>    <div class="lista-noticias-info">Por {{ noticia.autor }} em {{ noticia.data | date }}</div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'NoticiasRecentesComponent', 'selector': 'app-noticias-recentes'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'NoticiasRecentesComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
 
 
                    </div><div class="search-results">
@@ -500,8 +758,8 @@
 
         <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-variables';
-            var COMPODOC_CURRENT_PAGE_URL = 'variables.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'NoticiasRecentesComponent.html';
         </script>
 
        <script src="../js/search/search.js"></script>

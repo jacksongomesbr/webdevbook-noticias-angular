@@ -74,17 +74,20 @@
                         <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-components-links-module-AppModule-680645a6d052147c0a7da9cce13aa800"
+                                        data-target="#xs-components-links-module-AppModule-a8e66cc9973c7b5852d7b84f52bde05d"
                                     >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-components-links-module-AppModule-680645a6d052147c0a7da9cce13aa800"
+                                        id="xs-components-links-module-AppModule-a8e66cc9973c7b5852d7b84f52bde05d"
                                     >
                                         <li class="link">
                                             <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
+                                        </li>
+                                        <li class="link">
+                                            <a href="components/NoticiasRecentesComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">NoticiasRecentesComponent</a>
                                         </li>
                                 </ul>
                             </li>
@@ -208,17 +211,20 @@
                         <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#components-links-module-AppModule-680645a6d052147c0a7da9cce13aa800"
+                                        data-target="#components-links-module-AppModule-a8e66cc9973c7b5852d7b84f52bde05d"
 >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="components-links-module-AppModule-680645a6d052147c0a7da9cce13aa800"
+                                        id="components-links-module-AppModule-a8e66cc9973c7b5852d7b84f52bde05d"
 >
                                         <li class="link">
                                             <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
+                                        </li>
+                                        <li class="link">
+                                            <a href="components/NoticiasRecentesComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">NoticiasRecentesComponent</a>
                                         </li>
                                 </ul>
                             </li>
@@ -461,9 +467,6 @@
                                 <a href="#irPara">irPara</a>
                             </li>
                             <li>
-                                <a href="#mostrar">mostrar</a>
-                            </li>
-                            <li>
                                 <a href="#ngOnInit">ngOnInit</a>
                             </li>
                             <li>
@@ -471,6 +474,9 @@
                             </li>
                             <li>
                                 <a href="#noticiasPublicadas">noticiasPublicadas</a>
+                            </li>
+                            <li>
+                                <a href="#onMostrou">onMostrou</a>
                             </li>
                             <li>
                                 <a href="#salvar">salvar</a>
@@ -876,78 +882,6 @@ de somar 1),
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="mostrar"></a>
-                        <span class="name">
-                            <b>
-                            mostrar
-                            </b>
-                            <a href="#mostrar"><span class="fa fa-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>mostrar(noticia: )</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="140" class="link-to-prism">src/app/app.component.ts:140</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Apresenta uma notícia (tela de leitura)</p>
-</div>
-
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>noticia</td>
-                                                    
-                                                    <td>
-                                                            no
-                                                    </td>
-                                                    
-
-                                                        <td>
-                                                                <code><p>A notícia que deve ter o conteúdo apresentado</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
                         <a name="ngOnInit"></a>
                         <span class="name">
                             <b>
@@ -1080,6 +1014,78 @@ nome do autor.</p>
                                 <div class="io-description">
                                     <p>Lista das notícias publicadas</p>
 
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onMostrou"></a>
+                        <span class="name">
+                            <b>
+                            onMostrou
+                            </b>
+                            <a href="#onMostrou"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onMostrou(noticia: )</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="140" class="link-to-prism">src/app/app.component.ts:140</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Apresenta uma notícia (tela de leitura)</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>noticia</td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>A notícia que deve ter o conteúdo apresentado</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
                                 </div>
                     </td>
                 </tr>
@@ -1767,7 +1773,7 @@ export class AppComponent implements OnInit {
    * Apresenta uma notícia (tela de leitura)
    * @param noticia A notícia que deve ter o conteúdo apresentado
    */
-  mostrar(noticia) {
+  onMostrou(noticia) {
     this.leituraNoticia &#x3D; noticia;
     this.irPara(&#x27;leitura&#x27;);
   }
@@ -1909,16 +1915,7 @@ export class AppComponent implements OnInit {
 &lt;/nav&gt;
 &lt;hr&gt;
 
-&lt;div *ngIf&#x3D;&quot;tela &#x3D;&#x3D; &#x27;home&#x27;&quot;&gt;
-  &lt;h2&gt;Notícias recentes&lt;/h2&gt;
-  &lt;p&gt;Clique no título da notícia para ler o conteúdo&lt;/p&gt;
-  &lt;div id&#x3D;&quot;lista-noticias&quot;&gt;
-    &lt;div class&#x3D;&quot;lista-noticias-item&quot; *ngFor&#x3D;&quot;let noticia of noticiasPublicadas()&quot; (click)&#x3D;&quot;mostrar(noticia)&quot;&gt;
-      &lt;div class&#x3D;&quot;lista-noticias-titulo&quot;&gt;{{ noticia.titulo }}&lt;/div&gt;
-      &lt;div class&#x3D;&quot;lista-noticias-info&quot;&gt;Por {{ noticia.autor }} em {{ noticia.data | date }}&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+&lt;app-noticias-recentes [noticias]&#x3D;&quot;noticiasPublicadas()&quot; (mostrou)&#x3D;&quot;onMostrou($event)&quot; *ngIf&#x3D;&quot;tela &#x3D;&#x3D; &#x27;home&#x27;&quot;&gt;&lt;/app-noticias-recentes&gt;
 
 &lt;div *ngIf&#x3D;&quot;tela &#x3D;&#x3D; &#x27;leitura&#x27; &amp;&amp; leituraNoticia&quot;&gt;
   &lt;h2&gt;{{ leituraNoticia.titulo }}&lt;/h2&gt;
@@ -2023,8 +2020,8 @@ export class AppComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><h1>Notícias::Angular</h1><hr><nav>  <button (click)="irPara(\'home\')">Home</button> |  <button (click)="irPara(\'lista\')">Todas as notícias</button> |  <button (click)="irPara(\'cadastro\')">Cadastrar</button></nav><hr><div *ngIf="tela == \'home\'">  <h2>Notícias recentes</h2>  <p>Clique no título da notícia para ler o conteúdo</p>  <div id="lista-noticias">    <div class="lista-noticias-item" *ngFor="let noticia of noticiasPublicadas()" (click)="mostrar(noticia)">      <div class="lista-noticias-titulo">{{ noticia.titulo }}</div>      <div class="lista-noticias-info">Por {{ noticia.autor }} em {{ noticia.data | date }}</div>    </div>  </div></div><div *ngIf="tela == \'leitura\' && leituraNoticia">  <h2>{{ leituraNoticia.titulo }}</h2>  <div class="leitura-noticia-info">    Por {{ leituraNoticia.autor }}    <span *ngIf="leituraNoticia.emailDoAutor">({{ leituraNoticia.emailDoAutor }})</span>    em {{ leituraNoticia.data | date }}  </div>  <hr>  <div class="leitura-noticia-conteudo">    {{ leituraNoticia.conteudo }}  </div>  <div class="leitura-noticia-rodape">    <button (click)="fechar()">Fechar</button>  </div></div><div *ngIf="tela == \'lista\'">  <h2>Todas as notícias</h2>  <div id="lista-pesquisar">    <input type="search" placeholder="Digite para pesquisar..." [(ngModel)]="listaPesquisa">  </div>  <table>    <thead>      <tr>        <th scope="col">#</th>        <th scope="col">Título</th>        <th scope="col">Autor</th>        <th scope="col">Publicada</th>        <th scope="col">Ações</th>      </tr>    </thead>    <tbody>      <tr *ngFor="let noticia of noticiasParaLista()">        <td>{{ noticia.id }}</td>        <td>{{ noticia.titulo }}</td>        <td>{{ noticia.autor }}</td>        <td>{{ noticia.data }}</td>        <td>          <button (click)="editar(noticia)">Editar</button> |           <button (click)="excluir(noticia)">Excluir</button>        </td>      </tr>    </tbody>  </table></div><div *ngIf="tela == \'cadastro\' || tela == \'edicao\'">  <h2>Cadastrar notícia</h2>  <form #cadastro="ngForm" (submit)="salvar(cadastro)">    <div>      <label for="titulo">Título</label>      <input type="text" id="titulo" name="titulo" [(ngModel)]="titulo" required>    </div>    <div>      <label for="conteudo">Conteúdo</label>      <textarea id="conteudo" name="conteudo" cols="80" rows="5" [(ngModel)]="conteudo" required></textarea>    </div>    <div>      <label for="autor">Autor</label>      <input type="text" name="autor" id="autor" [(ngModel)]="autor" required>    </div>    <div>      <label for="emailDoAutor">E-mail do autor</label>      <input type="email" name="emailDoAutor" id="emailDoAutor" [(ngModel)]="emailDoAutor">    </div>    <div>      <label for="data">Data</label>      <input type="datetime-local" name="data" id="data" [(ngModel)]="data">    </div>    <div>      <button type="submit" [disabled]="!cadastro.form.valid">Salvar</button>      <button type="reset" *ngIf="tela == \'cadastro\'" formnovalidate>Limpar</button>      <button *ngIf="tela == \'edicao\'" (click)="cancelarEdicao()" formnovalidate>Cancelar</button>    </div>  </form></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'}];
+        var COMPONENT_TEMPLATE = '<div><h1>Notícias::Angular</h1><hr><nav>  <button (click)="irPara(\'home\')">Home</button> |  <button (click)="irPara(\'lista\')">Todas as notícias</button> |  <button (click)="irPara(\'cadastro\')">Cadastrar</button></nav><hr><app-noticias-recentes [noticias]="noticiasPublicadas()" (mostrou)="onMostrou($event)" *ngIf="tela == \'home\'"></app-noticias-recentes><div *ngIf="tela == \'leitura\' && leituraNoticia">  <h2>{{ leituraNoticia.titulo }}</h2>  <div class="leitura-noticia-info">    Por {{ leituraNoticia.autor }}    <span *ngIf="leituraNoticia.emailDoAutor">({{ leituraNoticia.emailDoAutor }})</span>    em {{ leituraNoticia.data | date }}  </div>  <hr>  <div class="leitura-noticia-conteudo">    {{ leituraNoticia.conteudo }}  </div>  <div class="leitura-noticia-rodape">    <button (click)="fechar()">Fechar</button>  </div></div><div *ngIf="tela == \'lista\'">  <h2>Todas as notícias</h2>  <div id="lista-pesquisar">    <input type="search" placeholder="Digite para pesquisar..." [(ngModel)]="listaPesquisa">  </div>  <table>    <thead>      <tr>        <th scope="col">#</th>        <th scope="col">Título</th>        <th scope="col">Autor</th>        <th scope="col">Publicada</th>        <th scope="col">Ações</th>      </tr>    </thead>    <tbody>      <tr *ngFor="let noticia of noticiasParaLista()">        <td>{{ noticia.id }}</td>        <td>{{ noticia.titulo }}</td>        <td>{{ noticia.autor }}</td>        <td>{{ noticia.data }}</td>        <td>          <button (click)="editar(noticia)">Editar</button> |           <button (click)="excluir(noticia)">Excluir</button>        </td>      </tr>    </tbody>  </table></div><div *ngIf="tela == \'cadastro\' || tela == \'edicao\'">  <h2>Cadastrar notícia</h2>  <form #cadastro="ngForm" (submit)="salvar(cadastro)">    <div>      <label for="titulo">Título</label>      <input type="text" id="titulo" name="titulo" [(ngModel)]="titulo" required>    </div>    <div>      <label for="conteudo">Conteúdo</label>      <textarea id="conteudo" name="conteudo" cols="80" rows="5" [(ngModel)]="conteudo" required></textarea>    </div>    <div>      <label for="autor">Autor</label>      <input type="text" name="autor" id="autor" [(ngModel)]="autor" required>    </div>    <div>      <label for="emailDoAutor">E-mail do autor</label>      <input type="email" name="emailDoAutor" id="emailDoAutor" [(ngModel)]="emailDoAutor">    </div>    <div>      <label for="data">Data</label>      <input type="datetime-local" name="data" id="data" [(ngModel)]="data">    </div>    <div>      <button type="submit" [disabled]="!cadastro.form.valid">Salvar</button>      <button type="reset" *ngIf="tela == \'cadastro\'" formnovalidate>Limpar</button>      <button *ngIf="tela == \'edicao\'" (click)="cancelarEdicao()" formnovalidate>Cancelar</button>    </div>  </form></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'NoticiasRecentesComponent', 'selector': 'app-noticias-recentes'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
 </script>

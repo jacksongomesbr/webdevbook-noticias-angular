@@ -7,16 +7,7 @@
 </nav>
 <hr>
 
-<div *ngIf="tela == 'home'">
-  <h2>Notícias recentes</h2>
-  <p>Clique no título da notícia para ler o conteúdo</p>
-  <div id="lista-noticias">
-    <div class="lista-noticias-item" *ngFor="let noticia of noticiasPublicadas()" (click)="mostrar(noticia)">
-      <div class="lista-noticias-titulo">{{ noticia.titulo }}</div>
-      <div class="lista-noticias-info">Por {{ noticia.autor }} em {{ noticia.data | date }}</div>
-    </div>
-  </div>
-</div>
+<app-noticias-recentes [noticias]="noticiasPublicadas()" (mostrou)="onMostrou($event)" *ngIf="tela == 'home'"></app-noticias-recentes>
 
 <div *ngIf="tela == 'leitura' && leituraNoticia">
   <h2>{{ leituraNoticia.titulo }}</h2>
