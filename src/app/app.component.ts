@@ -80,6 +80,16 @@ export class AppComponent implements OnInit {
   /**
    * Implementação da interface {@link OnInit}. Define dados de exemplo
    */
+  all = false;
+  /**
+   *Atributo utilizado para controlar a pesquisa a seleção de noticias a serem publicadas os despublicados, selecionando uma noticia específica
+   */
+  one = false;
+
+  checkPesquisa = true;
+  /**
+   * Implementação da interface {@link OnInit}. Define dados de exemplo
+   */
   ngOnInit() {
     this.noticias.push(new Noticia(
       this.noticias.length,
@@ -206,6 +216,9 @@ export class AppComponent implements OnInit {
         || n.autor.indexOf(this.listaPesquisa) !== -1
       );
     } else {
+      if (this.noticias === null) {
+        this.checkPesquisa = false;
+      }
       return this.noticias;
     }
   }
@@ -265,4 +278,31 @@ export class AppComponent implements OnInit {
     this.editarNoticia = null;
     this.irPara('lista');
   }
+
+
+publicarAll(noticias) {
+  const noticia = this.noticias.find(n => n.id === this.editarNoticia.id);
+  noticia.titulo = this.titulo;
+  noticia.conteudo = this.conteudo;
+  noticia.autor = this.autor;
+  noticia.emailDoAutor = this.emailDoAutor;
+  if (this.data) {
+    noticia.data = new Date(this.data);
+  } else {
+    this.data = new Date().toDateString();
+  }
+}
+
+despublicarAll(noticias) {
+  const noticia = this.noticias.find(n => n.id === this.editarNoticia.id);
+  noticia.titulo = this.titulo;
+  noticia.conteudo = this.conteudo;
+  noticia.autor = this.autor;
+  noticia.emailDoAutor = this.emailDoAutor;
+  if (this.data) {
+    noticia.data = null;
+  } else {
+    this.data = null;
+  }
+}
 }

@@ -42,6 +42,7 @@
   <table>
     <thead>
       <tr>
+        <th scope="col"><input type="checkbox" [(ngModel)]='all' value="all" *ngIf="!this.listaPesquisa"/></th>
         <th scope="col">#</th>
         <th scope="col">Título</th>
         <th scope="col">Autor</th>
@@ -51,6 +52,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let noticia of noticiasParaLista()">
+        <td><input type="checkbox" [(ngModel)]= 'one' [checked]="all" value= {{noticia.id}} /></td>
         <td>{{ noticia.id }}</td>
         <td>{{ noticia.titulo }}</td>
         <td>{{ noticia.autor }}</td>
