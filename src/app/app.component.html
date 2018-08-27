@@ -1,87 +1,10 @@
 <h1>Notícias::Angular</h1>
 <hr>
 <nav>
-  <button (click)="irPara('home')">Home</button> |
-  <button (click)="irPara('lista')">Todas as notícias</button> |
-  <button (click)="irPara('cadastro')">Cadastrar</button>
+  <a routerLink="">Home</a> |
+  Admin: 
+  <a routerLink="admin/noticias">Gerenciar notícias</a>
 </nav>
 <hr>
 
-<app-noticias-recentes [noticias]="noticiasPublicadas()" (mostrou)="onMostrou($event)" *ngIf="tela == 'home'"></app-noticias-recentes>
-
-<div *ngIf="tela == 'leitura' && leituraNoticia">
-  <h2>{{ leituraNoticia.titulo }}</h2>
-  <div class="leitura-noticia-info">
-    Por {{ leituraNoticia.autor }}
-    <span *ngIf="leituraNoticia.emailDoAutor">({{ leituraNoticia.emailDoAutor }})</span>
-    em {{ leituraNoticia.data | date }}
-  </div>
-  <hr>
-  <div class="leitura-noticia-conteudo">
-    {{ leituraNoticia.conteudo }}
-  </div>
-  <div class="leitura-noticia-rodape">
-    <button (click)="fechar()">Fechar</button>
-  </div>
-</div>
-
-<div *ngIf="tela == 'lista'">
-  <h2>Todas as notícias</h2>
-  <div id="lista-pesquisar">
-    <input type="search" placeholder="Digite para pesquisar..." [(ngModel)]="listaPesquisa">
-  </div>
-  <table>
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Título</th>
-        <th scope="col">Autor</th>
-        <th scope="col">Publicada</th>
-        <th scope="col">Ações</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let noticia of noticiasParaLista()">
-        <td>{{ noticia.id }}</td>
-        <td>{{ noticia.titulo }}</td>
-        <td>{{ noticia.autor }}</td>
-        <td>{{ noticia.data }}</td>
-        <td>
-          <button (click)="editar(noticia)">Editar</button> | 
-          <button (click)="excluir(noticia)">Excluir</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<div *ngIf="tela == 'cadastro' || tela == 'edicao'">
-  <h2>Cadastrar notícia</h2>
-  <form #cadastro="ngForm" (submit)="salvar(cadastro)">
-    <div>
-      <label for="titulo">Título</label>
-      <input type="text" id="titulo" name="titulo" [(ngModel)]="titulo" required>
-    </div>
-    <div>
-      <label for="conteudo">Conteúdo</label>
-      <textarea id="conteudo" name="conteudo" cols="80" rows="5" [(ngModel)]="conteudo" required></textarea>
-    </div>
-    <div>
-      <label for="autor">Autor</label>
-      <input type="text" name="autor" id="autor" [(ngModel)]="autor" required>
-    </div>
-    <div>
-      <label for="emailDoAutor">E-mail do autor</label>
-      <input type="email" name="emailDoAutor" id="emailDoAutor" [(ngModel)]="emailDoAutor">
-    </div>
-    <div>
-      <label for="data">Data</label>
-      <input type="datetime-local" name="data" id="data" [(ngModel)]="data">
-    </div>
-    <div>
-      <button type="submit" [disabled]="!cadastro.form.valid">Salvar</button>
-      <button type="reset" *ngIf="tela == 'cadastro'" formnovalidate>Limpar</button>
-      <button *ngIf="tela == 'edicao'" (click)="cancelarEdicao()" formnovalidate>Cancelar</button>
-    </div>
-  </form>
-</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,15 @@
+<div *ngIf="noticia">
+  <h2>{{ noticia.titulo }}</h2>
+  <div class="leitura-noticia-info">
+    Por {{ noticia.autor }}
+    <span *ngIf="noticia.emailDoAutor">({{ noticia.emailDoAutor }})</span>
+    em {{ noticia.data | date }}
+  </div>
+  <hr>
+  <div class="leitura-noticia-conteudo">
+    {{ noticia.conteudo }}
+  </div>
+  <div class="leitura-noticia-rodape">
+    <button (click)="fechar()">Fechar</button>
+  </div>
+</div>
