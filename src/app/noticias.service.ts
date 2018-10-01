@@ -12,7 +12,7 @@ export class NoticiasService {
    * A lista de notícias
    */
   lista: Array<Noticia> = [];
-  private proximoId: Number = 1;
+  private proximoId = 1;
 
   constructor() {
     this.cadastrar(new Noticia(null, 'Os seis atos do jogo de equipe da Mercedes que tirou vitória de Bottas e beneficiou Hamilton',
