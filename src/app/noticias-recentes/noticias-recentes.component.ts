@@ -16,11 +16,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./noticias-recentes.component.css']
 })
 export class NoticiasRecentesComponent implements OnInit {
+  noticia_destaque: Noticia;
 
   constructor(private noticias: NoticiasService,
     private router: Router) { }
 
   ngOnInit() {
+    this.noticia_destaque = this.noticias.noticiaDestaque();
   }
 
   /**

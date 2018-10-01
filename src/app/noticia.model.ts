@@ -13,6 +13,11 @@ export class Noticia {
     titulo: string;
 
     /**
+     * O resumo da notícia
+     */
+    resumo: string;
+
+    /**
      * O conteúdo da notícia
      */
     conteudo: string;
@@ -33,6 +38,16 @@ export class Noticia {
     data: Date;
 
     /**
+     * O indicador de notícia destaque
+     */
+    destaque: Boolean = false;
+
+    /**
+     * A url da foto da notícia
+     */
+    fotoUrl: string;
+
+    /**
      * Construtor da classe. O código trata o valor do parâmetro `data` da seguinte forma:
      * 
      * a) se estiver definido, então:
@@ -43,14 +58,19 @@ export class Noticia {
      *
      * @param id O identificador da notícia
      * @param titulo O título da notícia
+     * @param resumo O resumo da notícia
      * @param conteudo O conteúdo da notícia
      * @param autor O nome do autor da notícia
      * @param emailDoAutor O e-mail do autor da notícia
      * @param data A data da publicação da notícia
+     * @param destaque O indicador de notícia destaque
+     * @param fotoUrl A url da foto da notícia
      */
-    constructor(id: number, titulo: string, conteudo: string, autor: string, emailDoAutor: string, data: Date) {
+    constructor(id: number, titulo: string, resumo: string, conteudo: string, autor: string, emailDoAutor: string,
+        data: Date|string, destaque: Boolean = false, fotoUrl: string = null) {
         this.id = id;
         this.titulo = titulo;
+        this.resumo = resumo;
         this.conteudo = conteudo;
         this.autor = autor;
         this.emailDoAutor = emailDoAutor;
@@ -63,6 +83,8 @@ export class Noticia {
         } else {
             this.data = null;
         }
+        this.destaque = destaque;
+        this.fotoUrl = fotoUrl;
     }
 
     /**

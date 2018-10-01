@@ -1,0 +1,17 @@
+<p>{{lista.length}} notícia(s) publicada(s)</p>
+
+<div class="row noticia mb-4" *ngFor="let noticia of lista">
+  <div class="col-3">
+    <img class="w-100 rounded" [src]="noticia.fotoUrl">
+  </div>
+  <div class="col">
+    <h3 class="titulo">{{noticia.titulo}}</h3>
+    <div class="resumo text-muted">{{noticia.resumo}}</div>
+    <div>
+      <small><i class="fa fa-calendar"></i> {{noticia.data | date}}</small>
+    </div>
+    <div class="mt-2">
+      <a class="btn btn-primary btn-sm" [routerLink]="['/noticias', noticia.id]">Leia mais</a>
+    </div>
+  </div>
+</div>

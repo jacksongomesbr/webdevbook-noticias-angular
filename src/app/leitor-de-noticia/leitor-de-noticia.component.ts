@@ -30,15 +30,9 @@ export class LeitorDeNoticiaComponent implements OnInit {
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     this.noticia = this.noticias.encontrar(Number.parseInt(id));
+    if (!this.noticia) {
+      this.router.navigate(['pagina-nao-encontrada']);
+    }
   }
 
-  /**
-   * Fecha a leitura da notícia.
-   * 
-   * Este método fecha a leitura da notícia e gera navegação para a rota
-   * `` (padrão).
-   */
-  fechar() {
-    this.router.navigate(['']);
-  }
 }
