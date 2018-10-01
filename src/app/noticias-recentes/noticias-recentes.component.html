@@ -22,3 +22,10 @@
     </a>
   </div>
 </div>
+<div class="card">
+  <h2><i class="fas fa-hashtag"></i> 5 Notícias</h2>
+  <div class="card" *ngFor="let cinco of topcinco() ; let numero = index">
+      <h6>{{numero+1}} - {{cinco.titulo}}</h6>
+  </div>
+
+</div>
