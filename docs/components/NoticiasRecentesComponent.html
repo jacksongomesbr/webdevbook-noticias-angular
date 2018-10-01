@@ -14,279 +14,20 @@
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
             <a href="../" class="navbar-brand">Noticias Angular</a>
-            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-            <div id="book-search-input" role="search">
+                <div id="book-search-input" role="search">
     <input type="text" placeholder="Type to search">
 </div>
-            <nav>
-
-    <ul class="list">
-
-        <li class="title">
-            <a href="index.html" data-type="index-link">Noticias Angular</a>
-        </li>
-
-        <li class="divider"></li>
-
-
-        <li class="chapter">
-            <a data-type="chapter-link" href="index.html"><span class="fa fa-home"></span>Getting started</a>
-            <ul class="links">
-                    <li class="link">
-                        <a 
-                            
-                             href="overview.html" 
-                             href="overview.html" 
-                            data-type="chapter-link">
-                            <span class="fa fa-fw fa-th"></span>Overview
-                        </a>
-                    </li>
-                    <li class="link">
-                      <a href="index.html" data-type="chapter-link"><span class="fa fa-file-text-o"></span>README</a>
-                    </li>
-                    <li class="link">
-                        <a href="dependencies.html"
-                            data-type="chapter-link">
-                            <span class="fa fa-fw fa-list"></span>Dependencies
-                        </a>
-                    </li>
-            </ul>
-        </li>
-
-
-        <li class="chapter modules">
-            <a data-type="chapter-link" href="modules.html">
-                <div class="menu-toggler linked" data-toggle="collapse"
-                        data-target="#xs-modules-links"
-                >
-                    <span class="fa fa-fw fa-archive"></span>
-                    <span class="link-name">Modules</span>
-                    <span class="fa fa-angle-down"></span>
-                </div>
-            </a>
-            <ul class="links collapse"
-                    id="xs-modules-links"
-                >
-                    <li class="link">
-                        <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
-                            <li class="chapter inner">
-                                <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-components-links-module-AppModule-a8e66cc9973c7b5852d7b84f52bde05d"
-                                    >
-                                    <span class="fa fa-fw fa-cogs"></span>
-                                    <span>Components</span>
-                                    <span class="fa fa-angle-down"></span>
-                                </div>
-                                <ul class="links collapse"
-                                        id="xs-components-links-module-AppModule-a8e66cc9973c7b5852d7b84f52bde05d"
-                                    >
-                                        <li class="link">
-                                            <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
-                                        </li>
-                                        <li class="link">
-                                            <a href="components/NoticiasRecentesComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">NoticiasRecentesComponent</a>
-                                        </li>
-                                </ul>
-                            </li>
-                    </li>
-            </ul>
-        </li>
-
-
-
-        <li class="chapter">
-            <div class="simple menu-toggler" data-toggle="collapse"
-                    data-target="#xs-classes-links"
-                >
-                <span class="fa fa-fw fa-file-code-o"></span>
-                <span>Classes</span>
-                <span class="fa fa-angle-down"></span>
-            </div>
-            <ul class="links collapse"
-                    id="xs-classes-links"
-                >
-                    <li class="link">
-                        <a href="classes/Noticia.html" data-type="entity-link">Noticia</a>
-                    </li>
-            </ul>
-        </li>
-
-
-
-
-
-        <li class="chapter">
-            <div class="simple menu-toggler" data-toggle="collapse"
-                    data-target="#xs-miscellaneous-links"
-                >
-                <span class="fa fa-fw fa-cubes"></span>
-                <span>Miscellaneous</span>
-                <span class="fa fa-angle-down"></span>
-            </div>
-            <ul class="links collapse"
-                    id="xs-miscellaneous-links"
-                >
-                    <li class="link">
-                      <a href="miscellaneous/variables.html" data-type="entity-link">Variables</a>
-                    </li>
-            </ul>
-        </li>
-
-
-        <li class="chapter">
-            <a data-type="chapter-link" href="coverage.html"><span class="fa fa-fw fa-tasks"></span>Documentation coverage</a>
-        </li>
-
-        <li class="divider"></li>
-        <li class="copyright">
-                Documentation generated using <a href="https://compodoc.github.io/website/" target="_blank">
-                            <img data-src="images/compodoc-vectorise.svg" class="img-responsive" data-type="compodoc-logo">
-                </a>
-        </li>
-
-    </ul>
-
-</nav>
+            <compodoc-menu></compodoc-menu>
         </div>
 
         <div class="container-fluid main">
            <div class="row main">
                <div class="hidden-xs menu">
-                   <nav>
-
-    <ul class="list">
-
-        <li class="title">
-            <a href="index.html" data-type="index-link">Noticias Angular</a>
-        </li>
-
-        <li class="divider"></li>
-
-            <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search">
-</div>
-
-        <li class="chapter">
-            <a data-type="chapter-link" href="index.html"><span class="fa fa-home"></span>Getting started</a>
-            <ul class="links">
-                    <li class="link">
-                        <a 
-                            
-                             href="overview.html" 
-                             href="overview.html" 
-                            data-type="chapter-link">
-                            <span class="fa fa-fw fa-th"></span>Overview
-                        </a>
-                    </li>
-                    <li class="link">
-                      <a href="index.html" data-type="chapter-link"><span class="fa fa-file-text-o"></span>README</a>
-                    </li>
-                    <li class="link">
-                        <a href="dependencies.html"
-                            data-type="chapter-link">
-                            <span class="fa fa-fw fa-list"></span>Dependencies
-                        </a>
-                    </li>
-            </ul>
-        </li>
-
-
-        <li class="chapter modules">
-            <a data-type="chapter-link" href="modules.html">
-                <div class="menu-toggler linked" data-toggle="collapse"
-                        data-target="#modules-links"
-                >
-                    <span class="fa fa-fw fa-archive"></span>
-                    <span class="link-name">Modules</span>
-                    <span class="fa fa-angle-down"></span>
-                </div>
-            </a>
-            <ul class="links collapse"
-                    id="modules-links"
->
-                    <li class="link">
-                        <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
-                            <li class="chapter inner">
-                                <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#components-links-module-AppModule-a8e66cc9973c7b5852d7b84f52bde05d"
->
-                                    <span class="fa fa-fw fa-cogs"></span>
-                                    <span>Components</span>
-                                    <span class="fa fa-angle-down"></span>
-                                </div>
-                                <ul class="links collapse"
-                                        id="components-links-module-AppModule-a8e66cc9973c7b5852d7b84f52bde05d"
->
-                                        <li class="link">
-                                            <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
-                                        </li>
-                                        <li class="link">
-                                            <a href="components/NoticiasRecentesComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">NoticiasRecentesComponent</a>
-                                        </li>
-                                </ul>
-                            </li>
-                    </li>
-            </ul>
-        </li>
-
-
-
-        <li class="chapter">
-            <div class="simple menu-toggler" data-toggle="collapse"
-                    data-target="#classes-links"
->
-                <span class="fa fa-fw fa-file-code-o"></span>
-                <span>Classes</span>
-                <span class="fa fa-angle-down"></span>
-            </div>
-            <ul class="links collapse"
-                    id="classes-links"
->
-                    <li class="link">
-                        <a href="classes/Noticia.html" data-type="entity-link">Noticia</a>
-                    </li>
-            </ul>
-        </li>
-
-
-
-
-
-        <li class="chapter">
-            <div class="simple menu-toggler" data-toggle="collapse"
-                    data-target="#miscellaneous-links"
->
-                <span class="fa fa-fw fa-cubes"></span>
-                <span>Miscellaneous</span>
-                <span class="fa fa-angle-down"></span>
-            </div>
-            <ul class="links collapse"
-                    id="miscellaneous-links"
->
-                    <li class="link">
-                      <a href="miscellaneous/variables.html" data-type="entity-link">Variables</a>
-                    </li>
-            </ul>
-        </li>
-
-
-        <li class="chapter">
-            <a data-type="chapter-link" href="coverage.html"><span class="fa fa-fw fa-tasks"></span>Documentation coverage</a>
-        </li>
-
-        <li class="divider"></li>
-        <li class="copyright">
-                Documentation generated using <a href="https://compodoc.github.io/website/" target="_blank">
-                            <img data-src="images/compodoc-vectorise.svg" class="img-responsive" data-type="compodoc-logo">
-                </a>
-        </li>
-
-    </ul>
-
-</nav>
+                   <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
                <div class="content component">
@@ -329,8 +70,8 @@
     <p class="comment">
         <p>Componente que implementa a funcionalidade de apresentar a lista de notícias recentes.</p>
 <p>O componente recebe como entrada a lista de notícias. Cada item da lista pode ser clicado e,
-quando isso acontecer, o componente dispara um evento para permitir o componente host,
-saber qual notícia foi clicada e executar alguma lógica a partir disso.</p>
+quando isso acontecer, o componente gera uma navegação para a rota &#39;noticias/:id&#39;,
+permitindo a leitura da notícia desejada.</p>
 
     </p>
 
@@ -384,6 +125,20 @@ saber qual notícia foi clicada e executar alguma lógica a partir disso.</p>
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#noticia_destaque">noticia_destaque</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -403,35 +158,7 @@ saber qual notícia foi clicada e executar alguma lógica a partir disso.</p>
                     </td>
                 </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Inputs</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#noticias">noticias</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Outputs</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#mostrou">mostrou</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
 
 
 
@@ -445,65 +172,63 @@ saber qual notícia foi clicada e executar alguma lógica a partir disso.</p>
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(noticias: <a href="../injectables/NoticiasService.html">NoticiasService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/noticias-recentes/noticias-recentes.component.ts:28</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/noticias-recentes/noticias-recentes.component.ts:22</a></div>
                             </td>
                         </tr>
 
-            </tbody>
-        </table>
-</section>
-
-    <section>
-    <h3 id="inputs">Inputs</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
                 <tr>
-                    <td class="col-md-2">
-                        <a name="noticias"></a>
-                        <code>noticias</code>
-                    </td>
-                    <td class="col-md-10">
-                        <div><p>A propriedade de entrada que representa a lista de notícias que devem ser apresentadas</p>
-</div>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>noticias</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/NoticiasService.html" target="_self" >NoticiasService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
                     </td>
                 </tr>
-                        <tr>
-                            <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/noticias-recentes/noticias-recentes.component.ts:22</a></div>
-                            </td>
-                        </tr>
             </tbody>
         </table>
 </section>
-    <section>
-    <h3 id="outputs">Outputs</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-2">
-                        <a name="mostrou"></a>
-                        <code>mostrou</code>
-                    </td>
-                    <td class="col-md-10">
-                        <div><p>O evento que permite o componente host saber quando e qual notícia foi clicada</p>
-</div>
-                        <em><code>$event</code> type:</em>    <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
 
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/noticias-recentes/noticias-recentes.component.ts:28</a></div>
-                            </td>
-                        </tr>
-            </tbody>
-        </table>
-</section>
+
+
 
 
     <section>
@@ -520,29 +245,29 @@ saber qual notícia foi clicada e executar alguma lógica a partir disso.</p>
                             <b>
                             mostrar
                             </b>
-                            <a href="#mostrar"><span class="fa fa-link"></span></a>
+                            <a href="#mostrar"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>mostrar(noticia: )</code>
+<code>mostrar(noticia: <a href="../classes/Noticia.html">Noticia</a>)</code>
                     </td>
                 </tr>
 
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/noticias-recentes/noticias-recentes.component.ts:43</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/noticias-recentes/noticias-recentes.component.ts:39</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Método utilizado como tratador para o evento <code>mostrou</code>. </p>
-<p>O parâmetro <code>noticia</code> é informado para o componente host por meio do método <code>emit()</code>
-do atributo <code>mostrou</code>.</p>
+                            <div class="io-description"><p>Apresenta uma notícia (para leitura).</p>
+<p>Este método utiliza o <code>Router</code> para gerar uma navegação para a rota <code>noticias/:id</code>,
+permitindo a leitura da notícia em questão.</p>
 </div>
 
                             <div class="io-description">
@@ -551,6 +276,7 @@ do atributo <code>mostrou</code>.</p>
                                         <thead>
                                             <tr>
                                                 <td>Name</td>
+                                                    <td>Type</td>
                                                 <td>Optional</td>
                                                     <td>Description</td>
                                             </tr>
@@ -558,14 +284,17 @@ do atributo <code>mostrou</code>.</p>
                                         <tbody>
                                                 <tr>
                                                         <td>noticia</td>
+                                                        <td>
+                                                                    <code><a href="../classes/Noticia.html" target="_self" >Noticia</a></code>
+                                                        </td>
                                                     
                                                     <td>
-                                                            no
+                                                            No
                                                     </td>
                                                     
 
                                                         <td>
-                                                                <code><p>A notícia que foi clicada pelo usuário</p>
+                                                                <code><p>A notícia que deve ser apresentada</p>
 </code>
                                                         </td>
                                                 </tr>
@@ -594,7 +323,7 @@ do atributo <code>mostrou</code>.</p>
                             <b>
                             ngOnInit
                             </b>
-                            <a href="#ngOnInit"><span class="fa fa-link"></span></a>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -607,7 +336,7 @@ do atributo <code>mostrou</code>.</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/noticias-recentes/noticias-recentes.component.ts:32</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/noticias-recentes/noticias-recentes.component.ts:27</a></div>
                             </td>
                         </tr>
 
@@ -625,6 +354,52 @@ do atributo <code>mostrou</code>.</p>
         </table>
 </section>
 
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="noticia_destaque"></a>
+                        <span class="name">
+                            <b>
+                            noticia_destaque
+                            </b>
+                            <a href="#noticia_destaque"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>noticia_destaque:     <code><a href="../classes/Noticia.html" target="_self" >Noticia</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../classes/Noticia.html" target="_self" >Noticia</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/noticias-recentes/noticias-recentes.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A notícia de destaque</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
 
 </div>
 
@@ -632,13 +407,15 @@ do atributo <code>mostrou</code>.</p>
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input, Output, EventEmitter } from &#x27;@angular/core&#x27;;
 import { Noticia } from &#x27;../noticia.model&#x27;;
+import { NoticiasService } from &#x27;../noticias.service&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
 
 /**
  * Componente que implementa a funcionalidade de apresentar a lista de notícias recentes.
  * 
  * O componente recebe como entrada a lista de notícias. Cada item da lista pode ser clicado e,
- * quando isso acontecer, o componente dispara um evento para permitir o componente host,
- * saber qual notícia foi clicada e executar alguma lógica a partir disso.
+ * quando isso acontecer, o componente gera uma navegação para a rota &#x27;noticias/:id&#x27;,
+ * permitindo a leitura da notícia desejada.
  */
 @Component({
   selector: &#x27;app-noticias-recentes&#x27;,
@@ -646,49 +423,59 @@ import { Noticia } from &#x27;../noticia.model&#x27;;
   styleUrls: [&#x27;./noticias-recentes.component.css&#x27;]
 })
 export class NoticiasRecentesComponent implements OnInit {
-
   /**
-   * A propriedade de entrada que representa a lista de notícias que devem ser apresentadas
+   * A notícia de destaque
    */
-  @Input()
-  noticias;
+  noticia_destaque: Noticia;
 
-  /**
-   * O evento que permite o componente host saber quando e qual notícia foi clicada
-   */
-  @Output()
-  mostrou &#x3D; new EventEmitter&lt;Noticia&gt;();
-
-  constructor() { }
+  constructor(private noticias: NoticiasService,
+    private router: Router) { }
 
   ngOnInit() {
+    this.noticia_destaque &#x3D; this.noticias.noticiaDestaque();
   }
 
   /**
-   * Método utilizado como tratador para o evento &#x60;mostrou&#x60;. 
+   * Apresenta uma notícia (para leitura).
    * 
-   * O parâmetro &#x60;noticia&#x60; é informado para o componente host por meio do método &#x60;emit()&#x60;
-   * do atributo &#x60;mostrou&#x60;.
+   * Este método utiliza o &#x60;Router&#x60; para gerar uma navegação para a rota &#x60;noticias/:id&#x60;,
+   * permitindo a leitura da notícia em questão.
    * 
-   * @param noticia A notícia que foi clicada pelo usuário
+   * @param noticia A notícia que deve ser apresentada
    */
-  mostrar(noticia) {
-    this.mostrou.emit(noticia);
+  mostrar(noticia: Noticia) {
+    this.router.navigate([&#x27;noticias&#x27;, noticia.id]);
   }
+
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;h2&gt;Notícias recentes&lt;/h2&gt;
-&lt;p&gt;Clique no título da notícia para ler o conteúdo&lt;/p&gt;
-&lt;div id&#x3D;&quot;lista-noticias&quot;&gt;
-  &lt;div class&#x3D;&quot;lista-noticias-item&quot; *ngFor&#x3D;&quot;let noticia of noticias&quot; (click)&#x3D;&quot;mostrar(noticia)&quot;&gt;
-    &lt;div class&#x3D;&quot;lista-noticias-titulo&quot;&gt;{{ noticia.titulo }}&lt;/div&gt;
-    &lt;div class&#x3D;&quot;lista-noticias-info&quot;&gt;Por {{ noticia.autor }} em {{ noticia.data | date }}&lt;/div&gt;
-  &lt;/div&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div *ngIf&#x3D;&quot;noticia_destaque&quot; class&#x3D;&quot;noticia-destaque mb-5&quot;&gt;
+  &lt;a [routerLink]&#x3D;&quot;[&#x27;noticias&#x27;, noticia_destaque.id]&quot;&gt;
+    &lt;div class&#x3D;&quot;card&quot;&gt;
+      &lt;img class&#x3D;&quot;card-img-top&quot; [src]&#x3D;&quot;noticia_destaque.fotoUrl&quot; [alt]&#x3D;&quot;noticia_destaque.titulo&quot;&gt;
+      &lt;div class&#x3D;&quot;card-body&quot;&gt;
+        &lt;h1 class&#x3D;&quot;card-title mb-3&quot;&gt;{{noticia_destaque.titulo}}&lt;/h1&gt;
+        &lt;p class&#x3D;&quot;card-subtitle text-muted&quot;&gt;{{noticia_destaque.resumo}}&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/a&gt;
 &lt;/div&gt;
-</code></pre>
+&lt;h2 class&#x3D;&quot;mb-4&quot;&gt;&lt;i class&#x3D;&quot;fa fa-newspaper-o&quot;&gt;&lt;/i&gt; Notícias recentes&lt;/h2&gt;
+&lt;div class&#x3D;&quot;card-deck noticias-recentes&quot;&gt;
+  &lt;div class&#x3D;&quot;card&quot; *ngFor&#x3D;&quot;let noticia of noticias.publicadas(3, true)&quot;&gt;
+    &lt;a [routerLink]&#x3D;&quot;[&#x27;noticias&#x27;, noticia.id]&quot;&gt;
+      &lt;img class&#x3D;&quot;card-img-top&quot; [src]&#x3D;&quot;noticia.fotoUrl&quot; [alt]&#x3D;&quot;noticia.titulo&quot;&gt;
+      &lt;div class&#x3D;&quot;card-body&quot;&gt;
+        &lt;h5 class&#x3D;&quot;card-title&quot;&gt;{{noticia.titulo}}&lt;/h5&gt;
+        &lt;p class&#x3D;&quot;card-text text-muted&quot;&gt;{{noticia.resumo}}&lt;/p&gt;
+        &lt;p class&#x3D;&quot;card-text&quot;&gt;&lt;small class&#x3D;&quot;text-muted&quot;&gt;&lt;i class&#x3D;&quot;fa fa-calendar&quot;&gt;&lt;/i&gt; {{noticia.data | date}}&lt;/small&gt;&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -716,8 +503,8 @@ export class NoticiasRecentesComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><h2>Notícias recentes</h2><p>Clique no título da notícia para ler o conteúdo</p><div id="lista-noticias">  <div class="lista-noticias-item" *ngFor="let noticia of noticias" (click)="mostrar(noticia)">    <div class="lista-noticias-titulo">{{ noticia.titulo }}</div>    <div class="lista-noticias-info">Por {{ noticia.autor }} em {{ noticia.data | date }}</div>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'NoticiasRecentesComponent', 'selector': 'app-noticias-recentes'}];
+        var COMPONENT_TEMPLATE = '<div><div *ngIf="noticia_destaque" class="noticia-destaque mb-5">  <a [routerLink]="[\'noticias\', noticia_destaque.id]">    <div class="card">      <img class="card-img-top" [src]="noticia_destaque.fotoUrl" [alt]="noticia_destaque.titulo">      <div class="card-body">        <h1 class="card-title mb-3">{{noticia_destaque.titulo}}</h1>        <p class="card-subtitle text-muted">{{noticia_destaque.resumo}}</p>      </div>    </div>  </a></div><h2 class="mb-4"><i class="fa fa-newspaper-o"></i> Notícias recentes</h2><div class="card-deck noticias-recentes">  <div class="card" *ngFor="let noticia of noticias.publicadas(3, true)">    <a [routerLink]="[\'noticias\', noticia.id]">      <img class="card-img-top" [src]="noticia.fotoUrl" [alt]="noticia.titulo">      <div class="card-body">        <h5 class="card-title">{{noticia.titulo}}</h5>        <p class="card-text text-muted">{{noticia.resumo}}</p>        <p class="card-text"><small class="text-muted"><i class="fa fa-calendar"></i> {{noticia.data | date}}</small></p>      </div>    </a>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'LeitorDeNoticiaComponent', 'selector': 'app-leitor-de-noticia'},{'name': 'ListaDeNoticiasComponent', 'selector': 'app-lista-de-noticias'},{'name': 'NoticiasComponent', 'selector': 'app-noticias'},{'name': 'NoticiasRecentesComponent', 'selector': 'app-noticias-recentes'},{'name': 'PaginaNaoEncontradaComponent', 'selector': 'app-pagina-nao-encontrada'},{'name': 'SobreComponent', 'selector': 'app-sobre'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'NoticiasRecentesComponent'};
 </script>
@@ -733,9 +520,12 @@ export class NoticiasRecentesComponent implements OnInit {
 
 
 
+
+
+
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -747,6 +537,16 @@ export class NoticiasRecentesComponent implements OnInit {
            </div>
        </div>
 
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'NoticiasRecentesComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <script src="../js/menu-wc.js"></script>
+
        <script src="../js/libs/bootstrap-native.js"></script>
 
        <script src="../js/libs/es6-shim.min.js"></script>
@@ -756,21 +556,16 @@ export class NoticiasRecentesComponent implements OnInit {
 
        <script src="../js/compodoc.js"></script>
 
-        <script>
-            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'NoticiasRecentesComponent.html';
-        </script>
-
-       <script src="../js/search/search.js"></script>
-       <script src="../js/search/lunr.min.js"></script>
-       <script src="../js/search/search-lunr.js"></script>
-
        <script src="../js/tabs.js"></script>
        <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
        <script src="../js/libs/prism.js"></script>
        <script src="../js/sourceCode.js"></script>
-       <script src="../js/search/search_index.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
 
 
     </body>

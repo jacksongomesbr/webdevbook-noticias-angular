@@ -14,283 +14,26 @@
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
             <a href="../" class="navbar-brand">Noticias Angular</a>
-            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-            <div id="book-search-input" role="search">
+                <div id="book-search-input" role="search">
     <input type="text" placeholder="Type to search">
 </div>
-            <nav>
-
-    <ul class="list">
-
-        <li class="title">
-            <a href="index.html" data-type="index-link">Noticias Angular</a>
-        </li>
-
-        <li class="divider"></li>
-
-
-        <li class="chapter">
-            <a data-type="chapter-link" href="index.html"><span class="fa fa-home"></span>Getting started</a>
-            <ul class="links">
-                    <li class="link">
-                        <a 
-                            
-                             href="overview.html" 
-                             href="overview.html" 
-                            data-type="chapter-link">
-                            <span class="fa fa-fw fa-th"></span>Overview
-                        </a>
-                    </li>
-                    <li class="link">
-                      <a href="index.html" data-type="chapter-link"><span class="fa fa-file-text-o"></span>README</a>
-                    </li>
-                    <li class="link">
-                        <a href="dependencies.html"
-                            data-type="chapter-link">
-                            <span class="fa fa-fw fa-list"></span>Dependencies
-                        </a>
-                    </li>
-            </ul>
-        </li>
-
-
-        <li class="chapter modules">
-            <a data-type="chapter-link" href="modules.html">
-                <div class="menu-toggler linked" data-toggle="collapse"
-                        data-target="#xs-modules-links"
-                >
-                    <span class="fa fa-fw fa-archive"></span>
-                    <span class="link-name">Modules</span>
-                    <span class="fa fa-angle-down"></span>
-                </div>
-            </a>
-            <ul class="links collapse"
-                    id="xs-modules-links"
-                >
-                    <li class="link">
-                        <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
-                            <li class="chapter inner">
-                                <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-components-links-module-AppModule-a8e66cc9973c7b5852d7b84f52bde05d"
-                                    >
-                                    <span class="fa fa-fw fa-cogs"></span>
-                                    <span>Components</span>
-                                    <span class="fa fa-angle-down"></span>
-                                </div>
-                                <ul class="links collapse"
-                                        id="xs-components-links-module-AppModule-a8e66cc9973c7b5852d7b84f52bde05d"
-                                    >
-                                        <li class="link">
-                                            <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
-                                        </li>
-                                        <li class="link">
-                                            <a href="components/NoticiasRecentesComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">NoticiasRecentesComponent</a>
-                                        </li>
-                                </ul>
-                            </li>
-                    </li>
-            </ul>
-        </li>
-
-
-
-        <li class="chapter">
-            <div class="simple menu-toggler" data-toggle="collapse"
-                    data-target="#xs-classes-links"
-                >
-                <span class="fa fa-fw fa-file-code-o"></span>
-                <span>Classes</span>
-                <span class="fa fa-angle-down"></span>
-            </div>
-            <ul class="links collapse"
-                    id="xs-classes-links"
-                >
-                    <li class="link">
-                        <a href="classes/Noticia.html" data-type="entity-link">Noticia</a>
-                    </li>
-            </ul>
-        </li>
-
-
-
-
-
-        <li class="chapter">
-            <div class="simple menu-toggler" data-toggle="collapse"
-                    data-target="#xs-miscellaneous-links"
-                >
-                <span class="fa fa-fw fa-cubes"></span>
-                <span>Miscellaneous</span>
-                <span class="fa fa-angle-down"></span>
-            </div>
-            <ul class="links collapse"
-                    id="xs-miscellaneous-links"
-                >
-                    <li class="link">
-                      <a href="miscellaneous/variables.html" data-type="entity-link">Variables</a>
-                    </li>
-            </ul>
-        </li>
-
-
-        <li class="chapter">
-            <a data-type="chapter-link" href="coverage.html"><span class="fa fa-fw fa-tasks"></span>Documentation coverage</a>
-        </li>
-
-        <li class="divider"></li>
-        <li class="copyright">
-                Documentation generated using <a href="https://compodoc.github.io/website/" target="_blank">
-                            <img data-src="images/compodoc-vectorise.svg" class="img-responsive" data-type="compodoc-logo">
-                </a>
-        </li>
-
-    </ul>
-
-</nav>
+            <compodoc-menu></compodoc-menu>
         </div>
 
         <div class="container-fluid main">
            <div class="row main">
                <div class="hidden-xs menu">
-                   <nav>
-
-    <ul class="list">
-
-        <li class="title">
-            <a href="index.html" data-type="index-link">Noticias Angular</a>
-        </li>
-
-        <li class="divider"></li>
-
-            <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search">
-</div>
-
-        <li class="chapter">
-            <a data-type="chapter-link" href="index.html"><span class="fa fa-home"></span>Getting started</a>
-            <ul class="links">
-                    <li class="link">
-                        <a 
-                            
-                             href="overview.html" 
-                             href="overview.html" 
-                            data-type="chapter-link">
-                            <span class="fa fa-fw fa-th"></span>Overview
-                        </a>
-                    </li>
-                    <li class="link">
-                      <a href="index.html" data-type="chapter-link"><span class="fa fa-file-text-o"></span>README</a>
-                    </li>
-                    <li class="link">
-                        <a href="dependencies.html"
-                            data-type="chapter-link">
-                            <span class="fa fa-fw fa-list"></span>Dependencies
-                        </a>
-                    </li>
-            </ul>
-        </li>
-
-
-        <li class="chapter modules">
-            <a data-type="chapter-link" href="modules.html">
-                <div class="menu-toggler linked" data-toggle="collapse"
-                        data-target="#modules-links"
-                >
-                    <span class="fa fa-fw fa-archive"></span>
-                    <span class="link-name">Modules</span>
-                    <span class="fa fa-angle-down"></span>
-                </div>
-            </a>
-            <ul class="links collapse"
-                    id="modules-links"
->
-                    <li class="link">
-                        <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
-                            <li class="chapter inner">
-                                <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#components-links-module-AppModule-a8e66cc9973c7b5852d7b84f52bde05d"
->
-                                    <span class="fa fa-fw fa-cogs"></span>
-                                    <span>Components</span>
-                                    <span class="fa fa-angle-down"></span>
-                                </div>
-                                <ul class="links collapse"
-                                        id="components-links-module-AppModule-a8e66cc9973c7b5852d7b84f52bde05d"
->
-                                        <li class="link">
-                                            <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
-                                        </li>
-                                        <li class="link">
-                                            <a href="components/NoticiasRecentesComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">NoticiasRecentesComponent</a>
-                                        </li>
-                                </ul>
-                            </li>
-                    </li>
-            </ul>
-        </li>
-
-
-
-        <li class="chapter">
-            <div class="simple menu-toggler" data-toggle="collapse"
-                    data-target="#classes-links"
->
-                <span class="fa fa-fw fa-file-code-o"></span>
-                <span>Classes</span>
-                <span class="fa fa-angle-down"></span>
-            </div>
-            <ul class="links collapse"
-                    id="classes-links"
->
-                    <li class="link">
-                        <a href="classes/Noticia.html" data-type="entity-link">Noticia</a>
-                    </li>
-            </ul>
-        </li>
-
-
-
-
-
-        <li class="chapter">
-            <div class="simple menu-toggler" data-toggle="collapse"
-                    data-target="#miscellaneous-links"
->
-                <span class="fa fa-fw fa-cubes"></span>
-                <span>Miscellaneous</span>
-                <span class="fa fa-angle-down"></span>
-            </div>
-            <ul class="links collapse"
-                    id="miscellaneous-links"
->
-                    <li class="link">
-                      <a href="miscellaneous/variables.html" data-type="entity-link">Variables</a>
-                    </li>
-            </ul>
-        </li>
-
-
-        <li class="chapter">
-            <a data-type="chapter-link" href="coverage.html"><span class="fa fa-fw fa-tasks"></span>Documentation coverage</a>
-        </li>
-
-        <li class="divider"></li>
-        <li class="copyright">
-                Documentation generated using <a href="https://compodoc.github.io/website/" target="_blank">
-                            <img data-src="images/compodoc-vectorise.svg" class="img-responsive" data-type="compodoc-logo">
-                </a>
-        </li>
-
-    </ul>
-
-</nav>
+                   <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
                <div class="content class">
                    <div class="content-data">
+
+
 
 
 
@@ -356,10 +99,19 @@
                                 <a href="#data">data</a>
                             </li>
                             <li>
+                                <a href="#destaque">destaque</a>
+                            </li>
+                            <li>
                                 <a href="#emailDoAutor">emailDoAutor</a>
                             </li>
                             <li>
+                                <a href="#fotoUrl">fotoUrl</a>
+                            </li>
+                            <li>
                                 <a href="#id">id</a>
+                            </li>
+                            <li>
+                                <a href="#resumo">resumo</a>
                             </li>
                             <li>
                                 <a href="#titulo">titulo</a>
@@ -397,12 +149,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, titulo: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, conteudo: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, autor: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, emailDoAutor: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, data: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>)</code>
+<code>constructor(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, titulo: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, resumo: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, conteudo: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, autor: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, emailDoAutor: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, data: Date | string, destaque: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank">Boolean</a>, fotoUrl: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/noticia.model.ts:33</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/noticia.model.ts:48</a></div>
                             </td>
                         </tr>
 
@@ -436,7 +188,7 @@
                                                         </td>
                                                   
                                                     <td>
-                                                            no
+                                                            No
                                                     </td>
                                                     
                                                         <td>
@@ -452,11 +204,27 @@
                                                         </td>
                                                   
                                                     <td>
-                                                            no
+                                                            No
                                                     </td>
                                                     
                                                         <td>
                                                                 <code><p>O título da notícia</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>resumo</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>O resumo da notícia</p>
 </code>
                                                         </td>
                                                 </tr>
@@ -468,7 +236,7 @@
                                                         </td>
                                                   
                                                     <td>
-                                                            no
+                                                            No
                                                     </td>
                                                     
                                                         <td>
@@ -484,7 +252,7 @@
                                                         </td>
                                                   
                                                     <td>
-                                                            no
+                                                            No
                                                     </td>
                                                     
                                                         <td>
@@ -500,7 +268,7 @@
                                                         </td>
                                                   
                                                     <td>
-                                                            no
+                                                            No
                                                     </td>
                                                     
                                                         <td>
@@ -512,15 +280,47 @@
                                                         <td>data</td>
                                                   
                                                         <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                                                                    <code>Date | string</code>
                                                         </td>
                                                   
                                                     <td>
-                                                            no
+                                                            No
                                                     </td>
                                                     
                                                         <td>
                                                                 <code><p>A data da publicação da notícia</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>destaque</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank" >Boolean</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>O indicador de notícia destaque</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>fotoUrl</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>A url da foto da notícia</p>
 </code>
                                                         </td>
                                                 </tr>
@@ -547,7 +347,7 @@
                             <b>
                             autor
                             </b>
-                            <a href="#autor"><span class="fa fa-link"></span></a>
+                            <a href="#autor"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -565,7 +365,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/noticia.model.ts:23</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/noticia.model.ts:28</a></div>
                             </td>
                         </tr>
 
@@ -587,7 +387,7 @@
                             <b>
                             conteudo
                             </b>
-                            <a href="#conteudo"><span class="fa fa-link"></span></a>
+                            <a href="#conteudo"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -605,7 +405,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/noticia.model.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/noticia.model.ts:23</a></div>
                             </td>
                         </tr>
 
@@ -627,7 +427,7 @@
                             <b>
                             data
                             </b>
-                            <a href="#data"><span class="fa fa-link"></span></a>
+                            <a href="#data"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -645,7 +445,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/noticia.model.ts:33</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/noticia.model.ts:38</a></div>
                             </td>
                         </tr>
 
@@ -662,12 +462,57 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="destaque"></a>
+                        <span class="name">
+                            <b>
+                            destaque
+                            </b>
+                            <a href="#destaque"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>destaque:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank" >Boolean</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank" >Boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/noticia.model.ts:43</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>O indicador de notícia destaque</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="emailDoAutor"></a>
                         <span class="name">
                             <b>
                             emailDoAutor
                             </b>
-                            <a href="#emailDoAutor"><span class="fa fa-link"></span></a>
+                            <a href="#emailDoAutor"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -685,7 +530,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/noticia.model.ts:28</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/noticia.model.ts:33</a></div>
                             </td>
                         </tr>
 
@@ -702,12 +547,52 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="fotoUrl"></a>
+                        <span class="name">
+                            <b>
+                            fotoUrl
+                            </b>
+                            <a href="#fotoUrl"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>fotoUrl:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/noticia.model.ts:48</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A url da foto da notícia</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="id"></a>
                         <span class="name">
                             <b>
                             id
                             </b>
-                            <a href="#id"><span class="fa fa-link"></span></a>
+                            <a href="#id"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -742,12 +627,52 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="resumo"></a>
+                        <span class="name">
+                            <b>
+                            resumo
+                            </b>
+                            <a href="#resumo"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>resumo:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/noticia.model.ts:18</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>O resumo da notícia</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="titulo"></a>
                         <span class="name">
                             <b>
                             titulo
                             </b>
-                            <a href="#titulo"><span class="fa fa-link"></span></a>
+                            <a href="#titulo"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -794,7 +719,7 @@
                             <b>
                             estahPublicada
                             </b>
-                            <a href="#estahPublicada"><span class="fa fa-link"></span></a>
+                            <a href="#estahPublicada"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -807,7 +732,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/app/noticia.model.ts:77</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="99" class="link-to-prism">src/app/noticia.model.ts:99</a></div>
                             </td>
                         </tr>
 
@@ -857,6 +782,11 @@ c) se a data [de publicação] é menor ou igual que a data atual, então a not�
     titulo: string;
 
     /**
+     * O resumo da notícia
+     */
+    resumo: string;
+
+    /**
      * O conteúdo da notícia
      */
     conteudo: string;
@@ -877,6 +807,16 @@ c) se a data [de publicação] é menor ou igual que a data atual, então a not�
     data: Date;
 
     /**
+     * O indicador de notícia destaque
+     */
+    destaque: Boolean &#x3D; false;
+
+    /**
+     * A url da foto da notícia
+     */
+    fotoUrl: string;
+
+    /**
      * Construtor da classe. O código trata o valor do parâmetro &#x60;data&#x60; da seguinte forma:
      * 
      * a) se estiver definido, então:
@@ -887,14 +827,19 @@ c) se a data [de publicação] é menor ou igual que a data atual, então a not�
      *
      * @param id O identificador da notícia
      * @param titulo O título da notícia
+     * @param resumo O resumo da notícia
      * @param conteudo O conteúdo da notícia
      * @param autor O nome do autor da notícia
      * @param emailDoAutor O e-mail do autor da notícia
      * @param data A data da publicação da notícia
+     * @param destaque O indicador de notícia destaque
+     * @param fotoUrl A url da foto da notícia
      */
-    constructor(id: number, titulo: string, conteudo: string, autor: string, emailDoAutor: string, data: Date) {
+    constructor(id: number, titulo: string, resumo: string, conteudo: string, autor: string, emailDoAutor: string,
+        data: Date|string, destaque: Boolean &#x3D; false, fotoUrl: string &#x3D; null) {
         this.id &#x3D; id;
         this.titulo &#x3D; titulo;
+        this.resumo &#x3D; resumo;
         this.conteudo &#x3D; conteudo;
         this.autor &#x3D; autor;
         this.emailDoAutor &#x3D; emailDoAutor;
@@ -907,6 +852,8 @@ c) se a data [de publicação] é menor ou igual que a data atual, então a not�
         } else {
             this.data &#x3D; null;
         }
+        this.destaque &#x3D; destaque;
+        this.fotoUrl &#x3D; fotoUrl;
     }
 
     /**
@@ -941,9 +888,10 @@ c) se a data [de publicação] é menor ou igual que a data atual, então a not�
 
 
 
+
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -955,6 +903,16 @@ c) se a data [de publicação] é menor ou igual que a data atual, então a not�
            </div>
        </div>
 
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'Noticia.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <script src="../js/menu-wc.js"></script>
+
        <script src="../js/libs/bootstrap-native.js"></script>
 
        <script src="../js/libs/es6-shim.min.js"></script>
@@ -964,21 +922,16 @@ c) se a data [de publicação] é menor ou igual que a data atual, então a not�
 
        <script src="../js/compodoc.js"></script>
 
-        <script>
-            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'Noticia.html';
-        </script>
-
-       <script src="../js/search/search.js"></script>
-       <script src="../js/search/lunr.min.js"></script>
-       <script src="../js/search/search-lunr.js"></script>
-
        <script src="../js/tabs.js"></script>
        <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
        <script src="../js/libs/prism.js"></script>
        <script src="../js/sourceCode.js"></script>
-       <script src="../js/search/search_index.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
 
 
     </body>
