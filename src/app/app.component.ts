@@ -11,6 +11,7 @@ import { Noticia } from './noticia.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  isNavbarCollapsed = true;
 
   /**
    * Implementação da interface {@link OnInit}
