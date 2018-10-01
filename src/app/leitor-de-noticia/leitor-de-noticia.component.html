@@ -1,0 +1,13 @@
+<div *ngIf="noticia">
+  <h1>{{ noticia.titulo }}</h1>
+  <div class="resumo text-muted mb-5">{{ noticia.resumo }}</div>
+  <img class="mb-5 w-100" [src]="noticia.fotoUrl">
+  <div class="leitura-noticia-info">
+    <i class="fa fa-user"></i>&nbsp; <strong>{{ noticia.autor }}</strong> &nbsp;&nbsp;
+    <i class="fa fa-calendar"></i>&nbsp; {{ noticia.data | date }}
+  </div>
+  <hr>
+  <div class="leitura-noticia-conteudo">
+    {{ noticia.conteudo }}
+  </div>
+</div>

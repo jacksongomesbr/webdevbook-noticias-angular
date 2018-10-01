@@ -1,87 +1,44 @@
-<h1>Notícias::Angular</h1>
-<hr>
-<nav>
-  <button (click)="irPara('home')">Home</button> |
-  <button (click)="irPara('lista')">Todas as notícias</button> |
-  <button (click)="irPara('cadastro')">Cadastrar</button>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" routerLink=""><strong>Notícias::Angular</strong></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link" routerLink="">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="noticias">Notícias</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="sobre">Sobre</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
-<hr>
 
-<app-noticias-recentes [noticias]="noticiasPublicadas()" (mostrou)="onMostrou($event)" *ngIf="tela == 'home'"></app-noticias-recentes>
-
-<div *ngIf="tela == 'leitura' && leituraNoticia">
-  <h2>{{ leituraNoticia.titulo }}</h2>
-  <div class="leitura-noticia-info">
-    Por {{ leituraNoticia.autor }}
-    <span *ngIf="leituraNoticia.emailDoAutor">({{ leituraNoticia.emailDoAutor }})</span>
-    em {{ leituraNoticia.data | date }}
-  </div>
-  <hr>
-  <div class="leitura-noticia-conteudo">
-    {{ leituraNoticia.conteudo }}
-  </div>
-  <div class="leitura-noticia-rodape">
-    <button (click)="fechar()">Fechar</button>
-  </div>
+<div class="container pagina">
+  <router-outlet></router-outlet>
 </div>
 
-<div *ngIf="tela == 'lista'">
-  <h2>Todas as notícias</h2>
-  <div id="lista-pesquisar">
-    <input type="search" placeholder="Digite para pesquisar..." [(ngModel)]="listaPesquisa">
+<footer class="mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <strong>Angular::Notícias</strong>
+      </div>
+      <div class="col">
+        &copy; 2018
+      </div>
+      <div class="col">
+        <strong>Angular::Noticias</strong> é um software de notícias que serve como exercício para a disciplina de
+        Linguagem de Programação para a Web
+      </div>
+    </div>
   </div>
-  <table>
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Título</th>
-        <th scope="col">Autor</th>
-        <th scope="col">Publicada</th>
-        <th scope="col">Ações</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let noticia of noticiasParaLista()">
-        <td>{{ noticia.id }}</td>
-        <td>{{ noticia.titulo }}</td>
-        <td>{{ noticia.autor }}</td>
-        <td>{{ noticia.data }}</td>
-        <td>
-          <button (click)="editar(noticia)">Editar</button> | 
-          <button (click)="excluir(noticia)">Excluir</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<div *ngIf="tela == 'cadastro' || tela == 'edicao'">
-  <h2>Cadastrar notícia</h2>
-  <form #cadastro="ngForm" (submit)="salvar(cadastro)">
-    <div>
-      <label for="titulo">Título</label>
-      <input type="text" id="titulo" name="titulo" [(ngModel)]="titulo" required>
-    </div>
-    <div>
-      <label for="conteudo">Conteúdo</label>
-      <textarea id="conteudo" name="conteudo" cols="80" rows="5" [(ngModel)]="conteudo" required></textarea>
-    </div>
-    <div>
-      <label for="autor">Autor</label>
-      <input type="text" name="autor" id="autor" [(ngModel)]="autor" required>
-    </div>
-    <div>
-      <label for="emailDoAutor">E-mail do autor</label>
-      <input type="email" name="emailDoAutor" id="emailDoAutor" [(ngModel)]="emailDoAutor">
-    </div>
-    <div>
-      <label for="data">Data</label>
-      <input type="datetime-local" name="data" id="data" [(ngModel)]="data">
-    </div>
-    <div>
-      <button type="submit" [disabled]="!cadastro.form.valid">Salvar</button>
-      <button type="reset" *ngIf="tela == 'cadastro'" formnovalidate>Limpar</button>
-      <button *ngIf="tela == 'edicao'" (click)="cancelarEdicao()" formnovalidate>Cancelar</button>
-    </div>
-  </form>
-</div>
+</footer>

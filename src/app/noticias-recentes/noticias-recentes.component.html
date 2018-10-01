@@ -1,8 +1,24 @@
-<h2>Notícias recentes</h2>
-<p>Clique no título da notícia para ler o conteúdo</p>
-<div id="lista-noticias">
-  <div class="lista-noticias-item" *ngFor="let noticia of noticias" (click)="mostrar(noticia)">
-    <div class="lista-noticias-titulo">{{ noticia.titulo }}</div>
-    <div class="lista-noticias-info">Por {{ noticia.autor }} em {{ noticia.data | date }}</div>
+<div *ngIf="noticia_destaque" class="noticia-destaque mb-5">
+  <a [routerLink]="['noticias', noticia_destaque.id]">
+    <div class="card">
+      <img class="card-img-top" [src]="noticia_destaque.fotoUrl" [alt]="noticia_destaque.titulo">
+      <div class="card-body">
+        <h1 class="card-title mb-3">{{noticia_destaque.titulo}}</h1>
+        <p class="card-subtitle text-muted">{{noticia_destaque.resumo}}</p>
+      </div>
+    </div>
+  </a>
+</div>
+<h2 class="mb-4"><i class="fa fa-newspaper-o"></i> Notícias recentes</h2>
+<div class="card-deck noticias-recentes">
+  <div class="card" *ngFor="let noticia of noticias.publicadas(3, true)">
+    <a [routerLink]="['noticias', noticia.id]">
+      <img class="card-img-top" [src]="noticia.fotoUrl" [alt]="noticia.titulo">
+      <div class="card-body">
+        <h5 class="card-title">{{noticia.titulo}}</h5>
+        <p class="card-text text-muted">{{noticia.resumo}}</p>
+        <p class="card-text"><small class="text-muted"><i class="fa fa-calendar"></i> {{noticia.data | date}}</small></p>
+      </div>
+    </a>
   </div>
 </div>

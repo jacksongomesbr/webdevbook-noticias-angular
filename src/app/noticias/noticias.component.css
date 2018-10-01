@@ -1,0 +1,15 @@
+.noticia img {
+    object-fit: cover;
+    height: 150px;
+}
+
+.titulo {
+    letter-spacing: -2px;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+.resumo {
+    letter-spacing: -1px;
+    line-height: 16px;
+}
