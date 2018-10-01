@@ -14,6 +14,9 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./leitor-de-noticia.component.css']
 })
 export class LeitorDeNoticiaComponent implements OnInit {
+  /**
+   * A notícia a ser apresentada
+   */
   noticia = null;
 
   constructor(private noticias: NoticiasService,

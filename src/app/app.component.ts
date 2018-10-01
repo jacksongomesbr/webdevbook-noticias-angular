@@ -11,6 +11,9 @@ import { Noticia } from './noticia.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  /**
+   * Variável de controle para a navbar
+   */
   isNavbarCollapsed = true;
 
   /**

@@ -16,6 +16,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./noticias-recentes.component.css']
 })
 export class NoticiasRecentesComponent implements OnInit {
+  /**
+   * A notícia de destaque
+   */
   noticia_destaque: Noticia;
 
   constructor(private noticias: NoticiasService,

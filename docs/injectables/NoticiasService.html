@@ -1,0 +1,822 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Noticias Angular</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Noticias Angular</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li>NoticiasService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/noticias.service.ts</code>
+        </p>
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Serviço que encapsula e implementa as funcionalidades de acesso a dados de notícias.</p>
+
+            </p>
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#lista">lista</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#proximoId">proximoId</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#cadastrar">cadastrar</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#encontrar">encontrar</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#noticiaDestaque">noticiaDestaque</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#publicadas">publicadas</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#todas">todas</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/noticias.service.ts:19</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cadastrar"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            cadastrar
+                            </b>
+                            <a href="#cadastrar"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>cadastrar(noticia: <a href="../classes/Noticia.html">Noticia</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/noticias.service.ts:64</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Cadastra uma notícia na lista (banco de dados de notícias).</p>
+<p>Ao cadastrar uma notícia, o atributo <code>id</code> recebe o próximo número da sequência,
+com base no atributo <code>proximoId</code>.</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>noticia</td>
+                                                        <td>
+                                                                    <code><a href="../classes/Noticia.html" target="_self" >Noticia</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>A notícia a ser cadastrada</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/Noticia.html" target="_self" >Noticia</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    <p>A notícia cadastrada, com novo valor para o atributo <code>id</code></p>
+
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="encontrar"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            encontrar
+                            </b>
+                            <a href="#encontrar"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>encontrar(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="119" class="link-to-prism">src/app/noticias.service.ts:119</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Encontra e retorna uma notícia com base no identificador.</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>id</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>O identificador da notícia</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/Noticia.html" target="_self" >Noticia</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    <p>A notícia encontrada</p>
+
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="noticiaDestaque"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            noticiaDestaque
+                            </b>
+                            <a href="#noticiaDestaque"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>noticiaDestaque()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="128" class="link-to-prism">src/app/noticias.service.ts:128</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Encontra e retorna a notícia de destaque.</p>
+</div>
+
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/Noticia.html" target="_self" >Noticia</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    <p>A notícia encontrada</p>
+
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="publicadas"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            publicadas
+                            </b>
+                            <a href="#publicadas"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>publicadas(q: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, excluirDestaque: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="93" class="link-to-prism">src/app/noticias.service.ts:93</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Retorna apenas as notícias publicadas.</p>
+<p>Utiliza os métodos da classe <a href="Array">Array</a>: </p>
+<ul>
+<li><code>filter()</code>: para encontrar apenas as notícias publicadas, usando o método 
+<a href="../classes/Noticia.html#estahPublicada"><code>estahPublicada()</code></a> da classe <a href="../classes/Noticia.html">Noticia</a></li>
+<li><code>sort()</code>: para ordenar as notícias de forma decrescente pela data</li>
+</ul>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Default value</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>q</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code>null</code>
+                                                        </td>
+
+                                                        <td>
+                                                                <code><p>A quantidade notícias para retornar (padrão = <code>null</code>, para retornar todas as notícias)</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>excluirDestaque</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code>false</code>
+                                                        </td>
+
+                                                        <td>
+                                                                <code><p>Indica se deve ou não excluir a notícia de destaque da lista (padrão = <code>true</code>)</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    <p>Lista das notícias publicadas</p>
+
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="todas"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            todas
+                            </b>
+                            <a href="#todas"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>todas()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/noticias.service.ts:76</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Retorna todas as notícias.</p>
+</div>
+
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    <p>Lista de todas as notícias</p>
+
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="lista"></a>
+                        <span class="name">
+                            <b>
+                            lista
+                            </b>
+                            <a href="#lista"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>lista:     <code><a href="../classes/Noticia.html" target="_self" >Array&lt;Noticia&gt;</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../classes/Noticia.html" target="_self" >Array&lt;Noticia&gt;</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/noticias.service.ts:14</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>A lista de notícias</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="proximoId"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            proximoId
+                            </b>
+                            <a href="#proximoId"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>proximoId:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>1</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/noticias.service.ts:19</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>O atributo de controle para o gerador de identificadores de notícias (sequência)</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { Noticia } from &#x27;./noticia.model&#x27;;
+
+/**
+ * Serviço que encapsula e implementa as funcionalidades de acesso a dados de notícias.
+ */
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
+export class NoticiasService {
+  /**
+   * A lista de notícias
+   */
+  lista: Array&lt;Noticia&gt; &#x3D; [];
+
+  /**
+   * O atributo de controle para o gerador de identificadores de notícias (sequência)
+   */
+  private proximoId &#x3D; 1;
+
+  constructor() {
+    this.cadastrar(new Noticia(null, &#x27;Os seis atos do jogo de equipe da Mercedes que tirou vitória de Bottas e beneficiou Hamilton&#x27;,
+      &#x27;Confira o passo a passo da polêmica ordem ao finlandês, o que deu ao companheiro a oitava vitória no campeonato deste ano e a liderança ainda mais folgada na classificação geral.&#x27;,
+      &#x60;O Grande Prêmio da Rússia ficará marcado na história da Fórmula 1 como mais um em que as ordens de equipe decidiram um vencedor. No caso, a decisão do chefe da Mercedes, Toto Wolff, em mandar Valtteri Bottas abrir passagem para Lewis Hamilton ocorreu ainda na 25ª de 53 voltas. Naquele momento, o finlandês era o terceiro colocado, logo à frente do inglês, só que Max Verstappen e Kimi Raikkonen, que ocupavam os dois primeiros lugares, ainda teriam de fazer a troca de pneus obrigatória. Ou seja, na prática, a manobra valeu a vitória a Hamilton.
+      
+      Com o triunfo em Sochi, o inglês abriu uma grande vantagem de 50 pontos sobre Sebastian Vettel na liderança do campeonato, faltando cinco corridas para o fim da temporada. Só que o prejuízo para a imagem da Mercedes foi ainda maior do que sete pontos adicionais conseguidos por Hamilton com o jogo de equipe.&#x60;,
+      &#x27;GloboEsporte.com&#x27;, null,
+      &#x27;2018-09-30&#x27;, false, &#x27;assets/f1.jpg&#x27;));
+    this.cadastrar(new Noticia(null, &#x27;Passa de 800 o número de mortos na Indonésia devastada por terremoto e tsunami&#x27;,
+      &#x27;Número de mortos pode subir, pois há dezenas de desaparecidos e mais de 500 feridos - muitos em estado grave.&#x27;,
+      &#x60;O número de mortos nos terremotos e no tsunami que atingiram a ilha indonésia de Sulawesi dobrou e chegou a 832 em um balanço divulgado neste domingo (30). Porém, esse número pode subir, pois 29 pessoas seguem desaparecidas e mais de 500 estão feridas - muitas em estado grave.
+
+Estima-se que 350 mil pessoas tenham sido afetadas pelo terremoto ou pelo tsunami, sendo que 16.732 estão desabrigados ou deslocados desde sexta-feira (28).
+
+A maioria das vítimas foi registrada em Palu, cidade com cerca de 350 mil habitantes na costa oeste da ilha, de acordo com a Agência Nacional de Gestão de Desastres (BNPB, sigla em indonésio). Onze pessoas morreram na vizinha Donggala.
+
+O porta-voz da BNPB, Sutopo Purwo Nugroho, afirmou que um enterro em massa será realizado na cidade de Palu, por questões de segurança sanitária.
+&#x60;, &#x27;G1&#x27;, null, &#x27;2018-09-30 04:09:00&#x27;, true, &#x27;assets/destroi.jpg&#x27;));
+    this.cadastrar(new Noticia(null, &#x27;Morre, aos 89 anos, a cantora Angela Maria&#x27;,
+      &#x27;Ela estava internada há 34 dias em hospital de São Paulo&#x27;,
+      &#x60;RIO - A cantora Angela Maria, de 89 anos, morreu, na noite deste sábado, após 34 dias internada num hospital particular de São Paulo. A causa da morte ainda não foi divulgada. O velório da artista está acontecendo desde às 10h deste domingo, no Cemitério Congonhas, em Vila Sofia, São Paulo.
+
+    Eleita uma das rainhas do rádio, Angela foi uma das cantoras mais famosas do Brasil nos anos 1950 e 1960. Ela tinha 70 anos de carreira. O empresário da artista, Thiago Marques Luiz, postou, em sua página do Facebook, uma foto ao lado dela e escreveu sobre sua importância no mundo da música.&#x60;,
+      &#x27;O GLOBO&#x27;, null,
+      &#x27;2018-09-30 02:08:00&#x27;, false, &#x27;assets/angelamaria.jpg&#x27;));
+    this.cadastrar(new Noticia(null, &#x27;No Congresso, 85% dos políticos disputam a eleição de 2018&#x27;,
+      &#x27;O GLOBO lança ‘Painel da Reeleição’, gráfico interativo que mede desempenho dos candidatos a ficar em Brasília&#x27;,
+      &#x60;BRASÍLIA - No próximo domingo, 85% dos parlamentares tentarão conquistar votos suficientes para permanecer no Congresso Nacional. Nesse grupo, estão os que almejam a reeleição, mas também quem deseja trocar de Casa, ou seja, senadores que concorrem à Câmara e deputados que tentam uma vaga no Senado. Para auxiliar os eleitores na avaliação de quem hoje ocupa um mandato no Legislativo Federal, o site do GLOBO lança neste domingo, um gráfico interativo com dados sobre a atuação de cada um dos congressistas e como se posicionaram em votações importantes dos últimos quatro anos.
+    
+    Enquanto 41 deputados disputam uma eleição majoritária ao Senado, seis senadores traçam o caminho oposto: desistiram da reeleição e vão tentar uma vaga na Câmara. Três deles estão envolvidos em escândalos de corrupção. Desgastados pela Lava-Jato, Aécio Neves (PSDB-MG) e Gleisi Hoffmann (PT-PR) afirmam que o objetivo é fortalecer as bancadas de seus partidos na Câmara. No Senado desde 1987 e também alvo de denúncias de corrupção, José Agripino (DEM-RN) desistiu de permanecer no cargo em troca de apoio à chapa de Carlos Eduardo Alves (PDT) no Rio Grande do Norte.&#x60;,
+      &#x27;Marlen Couto&#x27;, null,
+      &#x27;2018-09-30 04:30:00&#x27;, false, &#x27;assets/congresso-nacional.jpg&#x27;));
+  }
+
+  /**
+   * Cadastra uma notícia na lista (banco de dados de notícias).
+   * 
+   * Ao cadastrar uma notícia, o atributo &#x60;id&#x60; recebe o próximo número da sequência,
+   * com base no atributo &#x60;proximoId&#x60;.
+   * 
+   * @param noticia A notícia a ser cadastrada
+   * @returns A notícia cadastrada, com novo valor para o atributo &#x60;id&#x60;
+   */
+  public cadastrar(noticia: Noticia): Noticia {
+    noticia.id &#x3D; this.proximoId;
+    this.proximoId++;
+    this.lista.push(noticia);
+    return noticia;
+  }
+
+  /**
+   * Retorna todas as notícias.
+   * 
+   * @returns Lista de todas as notícias
+   */
+  public todas() {
+    return this.lista;
+  }
+
+  /**
+   * Retorna apenas as notícias publicadas.
+   * 
+   * Utiliza os métodos da classe {@link Array}: 
+   * 
+   * * &#x60;filter()&#x60;: para encontrar apenas as notícias publicadas, usando o método 
+   * [&#x60;estahPublicada()&#x60;]{@link Noticia#estahPublicada} da classe {@link Noticia}
+   * * &#x60;sort()&#x60;: para ordenar as notícias de forma decrescente pela data
+   * 
+   * @param q A quantidade notícias para retornar (padrão &#x3D; &#x60;null&#x60;, para retornar todas as notícias)
+   * @param excluirDestaque Indica se deve ou não excluir a notícia de destaque da lista (padrão &#x3D; &#x60;true&#x60;)
+   * @returns Lista das notícias publicadas
+   */
+  public publicadas(q: number &#x3D; null, excluirDestaque: boolean &#x3D; false) {
+    let noticias &#x3D; this.lista.filter(n &#x3D;&gt; n.estahPublicada());
+    if (excluirDestaque) {
+      noticias &#x3D; noticias.filter(n &#x3D;&gt; !n.destaque);
+    }
+    noticias &#x3D; noticias.sort((a: Noticia, b: Noticia) &#x3D;&gt; {
+      if (b.data &lt; a.data) {
+        return -1;
+      } else if (b.data &gt; a.data) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+    if (q) {
+      noticias &#x3D; noticias.slice(0, q);
+    }
+    return noticias;
+  }
+
+  /**
+   * Encontra e retorna uma notícia com base no identificador.
+   * 
+   * @param id O identificador da notícia
+   * @returns A notícia encontrada
+   */
+  public encontrar(id: number): Noticia {
+    return this.lista.find(n &#x3D;&gt; n.id &#x3D;&#x3D;&#x3D; id);
+  }
+
+  /**
+   * Encontra e retorna a notícia de destaque.
+   * 
+   * @returns A notícia encontrada
+   */
+  public noticiaDestaque(): Noticia {
+    return this.lista.find(n &#x3D;&gt; n.destaque &#x3D;&#x3D;&#x3D; true);
+  }
+
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'NoticiasService.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <script src="../js/menu-wc.js"></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

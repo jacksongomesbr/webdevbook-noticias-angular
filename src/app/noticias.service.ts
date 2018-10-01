@@ -12,6 +12,10 @@ export class NoticiasService {
    * A lista de notícias
    */
   lista: Array<Noticia> = [];
+
+  /**
+   * O atributo de controle para o gerador de identificadores de notícias (sequência)
+   */
   private proximoId = 1;
 
   constructor() {
@@ -106,10 +110,21 @@ O porta-voz da BNPB, Sutopo Purwo Nugroho, afirmou que um enterro em massa será
     return noticias;
   }
 
+  /**
+   * Encontra e retorna uma notícia com base no identificador.
+   * 
+   * @param id O identificador da notícia
+   * @returns A notícia encontrada
+   */
   public encontrar(id: number): Noticia {
     return this.lista.find(n => n.id === id);
   }
 
+  /**
+   * Encontra e retorna a notícia de destaque.
+   * 
+   * @returns A notícia encontrada
+   */
   public noticiaDestaque(): Noticia {
     return this.lista.find(n => n.destaque === true);
   }
