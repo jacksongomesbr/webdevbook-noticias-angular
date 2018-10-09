@@ -11,6 +11,7 @@ import { LeitorDeNoticiaComponent } from './leitor-de-noticia/leitor-de-noticia.
 import { ListaDeNoticiasComponent } from './lista-de-noticias/lista-de-noticias.component';
 import { NoticiasComponent } from './noticias/noticias.component';
 import { SobreComponent } from './sobre/sobre.component';
+import { RankingAutorComponent } from './ranking-autor/ranking-autor.component';
 
 const rotas: Routes = [
   {path: 'admin/noticias', component: ListaDeNoticiasComponent, },
@@ -29,7 +30,8 @@ const rotas: Routes = [
     LeitorDeNoticiaComponent,
     ListaDeNoticiasComponent,
     NoticiasComponent,
-    SobreComponent
+    SobreComponent,
+    RankingAutorComponent
   ],
   imports: [
     NgbModule,
