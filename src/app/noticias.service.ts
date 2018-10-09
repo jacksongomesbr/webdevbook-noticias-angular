@@ -142,6 +142,6 @@ O porta-voz da BNPB, Sutopo Purwo Nugroho, afirmou que um enterro em massa será
         return 0;
         }
       });
-  }
+    }
 
 }
