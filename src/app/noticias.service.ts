@@ -129,6 +129,7 @@ O porta-voz da BNPB, Sutopo Purwo Nugroho, afirmou que um enterro em massa será
     return this.lista.find(n => n.destaque === true);
   }
 
+
   public noticiaRecente(Categoria: string): Noticia[] {
     return this.lista.filter(n => n.categoria()).sort((a: Noticia, b: Noticia) => {
       if (b.data < a.data) {
