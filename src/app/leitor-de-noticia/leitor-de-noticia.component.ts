@@ -18,6 +18,9 @@ export class LeitorDeNoticiaComponent implements OnInit {
    * A notícia a ser apresentada
    */
   noticia = null;
+  tag = null;
+  
+
 
   constructor(private noticias: NoticiasService,
     private route: ActivatedRoute,
@@ -36,6 +39,10 @@ export class LeitorDeNoticiaComponent implements OnInit {
     if (!this.noticia) {
       this.router.navigate(['pagina-nao-encontrada']);
     }
+    const idRota = this.route.snapshot.paramMap.get('id');
+    const nomeRota = this.route.snapshot.paramMap.get('nome')
+    this.tag = this.noticias.exibirNoticiaTag(nomeRota,Number.parseInt(idRota));
+    this.noticias.retornaTag(quantidade,id);
   }
 
 }

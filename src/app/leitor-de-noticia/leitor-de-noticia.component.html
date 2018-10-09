@@ -1,3 +1,9 @@
+<div>
+  
+  <i class="fa fa-tag"></i><a routerLink="/tag/tag.nome/tag.id" style='padding-right: 5px'>inicial</a> 
+  <i class="fa fa-list-alt"></i><a routerLink="/categoria" style='padding-right: 5px'>Inicial</a>
+  <router-outlet></router-outlet>
+</div>
 <div *ngIf="noticia">
   <h1>{{ noticia.titulo }}</h1>
   <div class="resumo text-muted mb-5">{{ noticia.resumo }}</div>
