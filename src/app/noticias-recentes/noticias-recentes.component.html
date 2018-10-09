@@ -1,12 +1,26 @@
-<div *ngIf="noticia_destaque" class="noticia-destaque mb-5">
+<div *ngIf="noticia_destaque" class="noticia-destaque mb-5 container">
+  
   <a [routerLink]="['noticias', noticia_destaque.id]">
-    <div class="card">
+    <div class="row">
+    <div class="card col-6">
       <img class="card-img-top" [src]="noticia_destaque.fotoUrl" [alt]="noticia_destaque.titulo">
       <div class="card-body">
         <h1 class="card-title mb-3">{{noticia_destaque.titulo}}</h1>
         <p class="card-subtitle text-muted">{{noticia_destaque.resumo}}</p>
       </div>
+      
     </div>
+    <div class="card col-6" *ngFor="let noticia of noticias.publicadas(3, true)" >
+      <img class="card-img-top" [src]="noticia_destaque.fotoUrl" [alt]="noticia_destaque.titulo">
+      <div class="card-body">
+        <h1 class="card-title mb-3">{{noticia_destaque.titulo}}</h1>
+        <p class="card-subtitle text-muted">{{noticia_destaque.resumo}}</p>
+      </div>
+      
+    </div>
+          
+    </div>
+    
   </a>
 </div>
 <h2 class="mb-4"><i class="fa fa-newspaper-o"></i> Notícias recentes</h2>
