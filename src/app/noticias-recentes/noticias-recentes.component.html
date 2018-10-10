@@ -22,3 +22,10 @@
     </a>
   </div>
 </div>
+
+<h2 class="mb-4">Ranking de autores</h2>
+<div class="card">
+  <div *ngFor="let ranking_autor of noticias.RankingAutor()">
+    <p>{{ranking_autor.autor}}</p>
+  </div>
+</div>
