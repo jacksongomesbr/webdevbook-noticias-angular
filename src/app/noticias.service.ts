@@ -14,6 +14,11 @@ export class NoticiasService {
   lista: Array<Noticia> = [];
 
   /**
+   * Lista que retorna N noticias encontradas com a Tag passada como parâmetro.
+   */
+  encontradas: Array<Noticia> = [];
+
+  /**
    * O atributo de controle para o gerador de identificadores de notícias (sequência)
    */
   private proximoId = 1;
@@ -128,5 +133,19 @@ O porta-voz da BNPB, Sutopo Purwo Nugroho, afirmou que um enterro em massa será
   public noticiaDestaque(): Noticia {
     return this.lista.find(n => n.destaque === true);
   }
+
+  public retornaTag (quantidade, id) {
+    var encontradas: Array<Noticia> = []  
+
+    for (var noticia of this.publicadas()){
+      for (var tag of noticia.tags)
+        if (tag.id === id /* && encontradas.length <= quantidade */){
+          encontradas.push(noticia)
+      }   
+    }
+
+    return encontradas.slice(0,quantidade);
+  }
+
 
 }

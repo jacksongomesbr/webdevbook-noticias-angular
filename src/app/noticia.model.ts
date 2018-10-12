@@ -47,6 +47,12 @@ export class Noticia {
      */
     fotoUrl: string;
 
+
+    tag: {id:number, nome: string, slug: string};
+
+    tags =[];
+    
+
     /**
      * Construtor da classe. O código trata o valor do parâmetro `data` da seguinte forma:
      * 
@@ -67,7 +73,8 @@ export class Noticia {
      * @param fotoUrl A url da foto da notícia
      */
     constructor(id: number, titulo: string, resumo: string, conteudo: string, autor: string, emailDoAutor: string,
-        data: Date|string, destaque: Boolean = false, fotoUrl: string = null) {
+        data: Date|string, destaque: Boolean = false, fotoUrl: string = null, tagId: number = null, tagNome: string = null,
+        tagSlug: string = null) {
         this.id = id;
         this.titulo = titulo;
         this.resumo = resumo;
@@ -85,6 +92,11 @@ export class Noticia {
         }
         this.destaque = destaque;
         this.fotoUrl = fotoUrl;
+        this.tags.push(
+        this.tag.id = tagId,
+        this.tag.nome = tagNome,
+        this.tag.slug = tagSlug
+        )
     }
 
     /**
