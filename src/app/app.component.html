@@ -28,6 +28,39 @@
 
 <footer class="mt-5">
   <div class="container">
+      <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+      <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+      <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+      
+      
+      <div class="container">
+        <div class="row">
+              <div class="span12">
+              <div class="text-center">
+                      <h2>Newsletter</h2>
+                      
+                      <p>
+                          Subscreva a nossa Newsletter.</p>
+                      
+                      <form >
+
+                          <div >Nome:
+                              <input type="text" id="nome" name="nome" placeholder="seu nome" [(ngModel)]="nome" required>
+                          </div>
+
+
+                          <div >E-mail:
+                              <input type="text" id="email" name="email" placeholder="seu@email.com" [(ngModel)]="email" required>
+                          </div>
+                          <br />
+                          <button (click)="cadastrarNewsletter()"class="btn btn-large" >Subscrever-se!</button>
+                          
+
+                    </form>
+                  </div>    
+              </div>
+        </div>
+      </div>
     <div class="row">
       <div class="col">
         <strong>Angular::Notícias</strong>
