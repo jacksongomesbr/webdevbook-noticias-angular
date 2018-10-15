@@ -40,4 +40,8 @@ export class NoticiasRecentesComponent implements OnInit {
     this.router.navigate(['noticias', noticia.id]);
   }
 
+  topcinco() {
+    let maislisdas=this.noticias.maislidas(5)
+    return maislidas
+  }
 }
