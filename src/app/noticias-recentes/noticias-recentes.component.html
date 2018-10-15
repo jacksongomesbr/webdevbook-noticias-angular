@@ -11,7 +11,7 @@
 </div>
 <h2 class="mb-4"><i class="fa fa-newspaper-o"></i> Notícias recentes</h2>
 <div class="card-deck noticias-recentes">
-  <div class="card" *ngFor="let noticia of noticias.publicadas(3, true)">
+  <div class="card" *ngFor="let noticia of noticias_publicadas | async">
     <a [routerLink]="['noticias', noticia.id]">
       <img class="card-img-top" [src]="noticia.fotoUrl" [alt]="noticia.titulo">
       <div class="card-body">

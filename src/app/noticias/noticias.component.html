@@ -1,6 +1,6 @@
-<p>{{lista.length}} notícia(s) publicada(s)</p>
+<p>{{(lista|async).length}} notícia(s) publicada(s)</p>
 
-<div class="row noticia mb-4" *ngFor="let noticia of lista">
+<div class="row noticia mb-4" *ngFor="let noticia of lista | async">
   <div class="col-3">
     <img class="w-100 rounded" [src]="noticia.fotoUrl">
   </div>

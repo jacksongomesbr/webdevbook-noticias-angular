@@ -20,12 +20,15 @@ export class NoticiasRecentesComponent implements OnInit {
    * A notícia de destaque
    */
   noticia_destaque: Noticia;
+  noticias_publicadas = null;
 
   constructor(private noticias: NoticiasService,
     private router: Router) { }
 
   ngOnInit() {
-    this.noticia_destaque = this.noticias.noticiaDestaque();
+    this.noticias.noticiaDestaque()
+      .subscribe(noticia => this.noticia_destaque = noticia);
+    this.noticias_publicadas = this.noticias.publicadas(3, true);
   }
 
   /**

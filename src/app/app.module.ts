@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NoticiasRecentesComponent } from './noticias-recentes/noticias-recentes.component';
@@ -36,6 +37,7 @@ const rotas: Routes = [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(rotas),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

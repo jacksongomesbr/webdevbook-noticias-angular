@@ -32,10 +32,14 @@ export class LeitorDeNoticiaComponent implements OnInit {
    */
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-    this.noticia = this.noticias.encontrar(Number.parseInt(id));
-    if (!this.noticia) {
-      this.router.navigate(['pagina-nao-encontrada']);
-    }
+    this.noticias.encontrar(Number.parseInt(id))
+    .subscribe(noticia => {
+      if (!noticia) {
+        this.router.navigate(['pagina-nao-encontrada']);
+      } else {
+        this.noticia = noticia;
+      }
+    });
   }
 
 }
