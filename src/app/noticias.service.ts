@@ -53,7 +53,7 @@ O porta-voz da BNPB, Sutopo Purwo Nugroho, afirmou que um enterro em massa será
   }
 
   /**
-   * Cadastra uma notícia na lista (banco de dados de notícias).
+   * Cadastra uma notícia no LocalStorege
    * 
    * Ao cadastrar uma notícia, o atributo `id` recebe o próximo número da sequência,
    * com base no atributo `proximoId`.
@@ -64,8 +64,19 @@ O porta-voz da BNPB, Sutopo Purwo Nugroho, afirmou que um enterro em massa será
   public cadastrar(noticia: Noticia): Noticia {
     noticia.id = this.proximoId;
     this.proximoId++;
-    this.lista.push(noticia);
-    return noticia;
+    let lista = [];
+    if (localStorage.getItem('lista') === null){
+      lista.push(noticia);
+      localStorage.setItem('lista', JSON.stringify(lista));
+      return noticia;
+    }
+    else{
+      lista = JSON.parse(localStorage.getItem('lista'));
+      lista.push(noticia);
+      localStorage.setItem('lista', JSON.stringify(lista));
+      return noticia;
+    }
+    
   }
 
   /**
@@ -77,21 +88,51 @@ O porta-voz da BNPB, Sutopo Purwo Nugroho, afirmou que um enterro em massa será
     return this.lista;
   }
 
+
+
+  /**
+     * esse metodo foi duplicado da [`estahPublicada()`]{@link Noticia#estahPublicada} da classe {@link Noticia}, para utilizaçao dos dados no LocalStorege
+     * Consulta a situação da notícia para verificar se está publicada:
+     *
+     * a) se a data [de publicação] não está definida, então a notícia não está publicada;
+     * b) se a data [de publicação] é maior que a data atual, então a notícia não está publicada;
+     * c) se a data [de publicação] é menor ou igual que a data atual, então a notícia está publicada.
+     *
+     * @returns boolean True indica que a notícia está publicada, False cc.
+     */
+  estahPublicada(noticia: Noticia): boolean {
+    // checa se a data está definida
+    if (!noticia.data) {
+        return false;
+    }
+    // checa se a data é maior que a data atual
+    const dataAtual = new Date();
+    if (noticia.data > dataAtual) {
+        return false;
+    }
+    // casos esgotados, notícia publicada
+    return true;
+}
+
   /**
    * Retorna apenas as notícias publicadas.
    * 
    * Utiliza os métodos da classe {@link Array}: 
    * 
    * * `filter()`: para encontrar apenas as notícias publicadas, usando o método 
-   * [`estahPublicada()`]{@link Noticia#estahPublicada} da classe {@link Noticia}
+   * [`estahPublicada()`]{@link NoticiasService#estahPublicada} da classe {@link NoticiasService}
    * * `sort()`: para ordenar as notícias de forma decrescente pela data
    * 
    * @param q A quantidade notícias para retornar (padrão = `null`, para retornar todas as notícias)
    * @param excluirDestaque Indica se deve ou não excluir a notícia de destaque da lista (padrão = `true`)
    * @returns Lista das notícias publicadas
    */
+
+
   public publicadas(q: number = null, excluirDestaque: boolean = false) {
-    let noticias = this.lista.filter(n => n.estahPublicada());
+    let lista = JSON.parse(localStorage.getItem('lista'));
+    
+    let noticias = lista.filter(n => this.estahPublicada(n));
     if (excluirDestaque) {
       noticias = noticias.filter(n => !n.destaque);
     }
@@ -107,6 +148,7 @@ O porta-voz da BNPB, Sutopo Purwo Nugroho, afirmou que um enterro em massa será
     if (q) {
       noticias = noticias.slice(0, q);
     }
+    console.log(noticias);
     return noticias;
   }
 
