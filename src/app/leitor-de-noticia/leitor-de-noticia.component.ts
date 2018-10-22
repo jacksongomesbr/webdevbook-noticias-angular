@@ -18,6 +18,7 @@ export class LeitorDeNoticiaComponent implements OnInit {
    * A notícia a ser apresentada
    */
   noticia = null;
+  noticia_erro = false;
 
   constructor(private noticias: NoticiasService,
     private route: ActivatedRoute,
@@ -39,7 +40,8 @@ export class LeitorDeNoticiaComponent implements OnInit {
       } else {
         this.noticia = noticia;
       }
-    });
+    },
+    erro => this.noticia_erro = true);
   }
 
 }

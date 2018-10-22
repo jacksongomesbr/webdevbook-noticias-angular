@@ -1,7 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { catchError } from 'rxjs/operators';
 import { Noticia } from '../noticia.model';
 import { NoticiasService } from '../noticias.service';
 import { Router } from '@angular/router';
+import { of } from 'rxjs';
 
 /**
  * Componente que implementa a funcionalidade de apresentar a lista de notícias recentes.
@@ -20,15 +22,29 @@ export class NoticiasRecentesComponent implements OnInit {
    * A notícia de destaque
    */
   noticia_destaque: Noticia;
-  noticias_publicadas = null;
+  noticia_destaque_erro = false;
+  noticias_publicadas$ = null;
+  noticias_publicadas_erro = false;
 
   constructor(private noticias: NoticiasService,
     private router: Router) { }
 
   ngOnInit() {
     this.noticias.noticiaDestaque()
-      .subscribe(noticia => this.noticia_destaque = noticia);
-    this.noticias_publicadas = this.noticias.publicadas(3, true);
+      .subscribe(
+        noticia => {
+          this.noticia_destaque = noticia;
+          this.noticia_destaque_erro = false;
+        },
+        error => this.noticia_destaque_erro = true);
+    this.noticias_publicadas$ = this.noticias.publicadas(3, true)
+      .pipe(
+        catchError((error) => {
+          console.error('erro ao carregar lista de notícias publicadas', error);
+          this.noticias_publicadas_erro = true;
+          return of();
+        })
+      );
   }
 
   /**

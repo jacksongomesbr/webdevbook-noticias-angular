@@ -3,28 +3,21 @@ import { HttpClient } from '@angular/common/http';
 import { Database } from './database.model';
 import { map } from 'rxjs/operators';
 import { Autor } from './autor.model';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AutoresService {
-  DB_URL = 'assets/db.json';
+  API_URL = 'http://localhost:8000/api/pessoas/';
 
   constructor(private http: HttpClient) { }
 
   public todos() {
-    return this.http.get(this.DB_URL)
-      .pipe(
-        map<Database, Array<Autor>>(dados => dados.autores)
-      );
+    return this.http.get(this.API_URL);
   }
 
-  public encontrar(id: number) {
-    return this.todos()
-      .pipe(
-        map<Array<Autor>, Autor>(autores => {
-          return autores.find(autor => autor.id === id);
-        })
-      );
+  public encontrar(id: number): Observable<Autor> {
+    return this.http.get<Autor>(this.API_URL + id + '/');
   }
 }

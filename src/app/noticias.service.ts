@@ -13,7 +13,7 @@ import { AutoresService } from './autores.service';
   providedIn: 'root'
 })
 export class NoticiasService {
-  DB_URL = 'assets/db.json';
+  API_URL = 'http://localhost:8000/api/noticias/';
 
   constructor(private http: HttpClient, private autores: AutoresService) {
   }
@@ -24,9 +24,9 @@ export class NoticiasService {
    * @returns Lista de todas as notícias
    */
   public todas() {
-    return this.http.get(this.DB_URL)
+    return this.http.get(this.API_URL)
       .pipe(
-        map<Database, Array<Noticia>>(dados => dados.noticias)
+        tap(r => console.log(r))
       );
   }
 
@@ -44,38 +44,11 @@ export class NoticiasService {
    * @returns Lista das notícias publicadas
    */
   public publicadas(q: number = null, excluirDestaque: boolean = false) {
-    return forkJoin(
-      this.todas()
-        .pipe(
-          map<Array<Noticia>, Array<Noticia>>(noticias => {
-            if (excluirDestaque) {
-              return noticias.filter(noticia => !noticia.destaque);
-            } else {
-              return noticias;
-            }
-          }),
-          map(noticias => {
-            return noticias.sort((a: Noticia, b: Noticia) => {
-              if (b.data < a.data) {
-                return -1;
-              } else if (b.data > a.data) {
-                return 1;
-              } else {
-                return 0;
-              }
-            });
-          }),
-        ),
-      this.autores.todos()
-    ).pipe(
-      map(([noticias, autores]) => {
-        noticias.forEach(noticia => {
-          noticia.autor = autores.find(autor => autor.id === noticia.autor_id);
-          return noticia;
-        });
-        return noticias;
-      })
-    );
+    let url = this.API_URL + '?publicada=true';
+    if (excluirDestaque) {
+      url += '&destaque=false';
+    }
+    return this.http.get(url);
   }
 
   /**
@@ -85,12 +58,12 @@ export class NoticiasService {
    * @returns A notícia encontrada
    */
   public encontrar(id: number) {
-    return this.todas()
+    const url = this.API_URL + id + '/';
+    return this.http.get(url)
       .pipe(
-        map(noticias => noticias.find(noticia => noticia.id === id)),
         map((noticia: Noticia) => {
           return forkJoin(of(noticia),
-            this.autores.encontrar(noticia.autor_id));
+            this.http.get(noticia.autor));
         }),
         concatAll(),
         map(([noticia, autor]) => {
@@ -99,24 +72,6 @@ export class NoticiasService {
         }),
         tap(r => console.log(r))
       );
-    // return forkJoin(this.todas()
-    //   .pipe(
-    //     map<Array<Noticia>, Noticia>(noticias => {
-    //       return noticias.find(noticia => noticia.id === id);
-    //     }),
-    //     tap(r => console.log(r))
-    //   ),
-    //   this.autores.todos()
-    // ).pipe(
-    //   map(([noticia, autores]) => {
-    //     if (noticia) {
-    //       noticia.autor = autores.find(autor => autor.id === noticia.autor_id);
-    //       return noticia;
-    //     } else {
-    //       return null;
-    //     }
-    //   })
-    // );
   }
 
   /**
@@ -125,12 +80,16 @@ export class NoticiasService {
    * @returns A notícia encontrada
    */
   public noticiaDestaque() {
-    return this.todas()
+    const url = this.API_URL + '?destaque=true';
+    return this.http.get(url)
       .pipe(
-        map<Array<Noticia>, Noticia>(noticias => {
-          return noticias.find(noticia => noticia.destaque === true);
-        }),
-        tap(r => console.log(r))
+        map((noticias: Noticia[]) => {
+          if (noticias.length > 0) {
+            return noticias[0];
+          } else {
+            return [];
+          }
+        })
       );
   }
 
