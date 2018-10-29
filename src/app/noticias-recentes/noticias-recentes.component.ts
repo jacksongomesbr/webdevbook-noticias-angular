@@ -32,8 +32,8 @@ export class NoticiasRecentesComponent implements OnInit {
   ngOnInit() {
     this.noticias.noticiaDestaque()
       .subscribe(
-        noticia => {
-          this.noticia_destaque = noticia;
+        noticias => {
+          this.noticia_destaque = noticias[0];
           this.noticia_destaque_erro = false;
         },
         error => this.noticia_destaque_erro = true);

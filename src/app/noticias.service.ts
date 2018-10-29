@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Noticia } from './noticia.model';
-import { HttpClient } from '@angular/common/http';
-import { filter, map, tap, concat, mergeMap, concatMap, concatAll } from 'rxjs/operators';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { filter, map, tap, concat, mergeMap, concatMap, concatAll, take } from 'rxjs/operators';
 import { Database } from './database.model';
 import { forkJoin, from, of } from 'rxjs';
 import { AutoresService } from './autores.service';
+import { AutenticacaoService } from './api.service';
 
 /**
  * Serviço que encapsula e implementa as funcionalidades de acesso a dados de notícias.
@@ -15,7 +16,7 @@ import { AutoresService } from './autores.service';
 export class NoticiasService {
   API_URL = 'http://localhost:8000/api/noticias/';
 
-  constructor(private http: HttpClient, private autores: AutoresService) {
+  constructor(private http: HttpClient, private autores: AutoresService, private auth: AutenticacaoService) {
   }
 
   /**
@@ -24,31 +25,45 @@ export class NoticiasService {
    * @returns Lista de todas as notícias
    */
   public todas() {
-    return this.http.get(this.API_URL)
+    const options = this.getHeaders();
+    return this.http.get(this.API_URL, options)
       .pipe(
         tap(r => console.log(r))
       );
   }
 
+  private getHeaders() {
+    const credenciais = this.auth.getCredenciais();
+    if (credenciais) {
+      return {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          'Authorization': 'Basic ' + btoa(`${credenciais.username}:${credenciais.password}`)
+        })
+      };
+    } else {
+      return {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+        })
+      };
+    }
+  }
+
   /**
    * Retorna apenas as notícias publicadas.
-   * 
-   * Utiliza os métodos da classe {@link Array}: 
-   * 
-   * * `filter()`: para encontrar apenas as notícias publicadas, usando o método 
-   * [`estahPublicada()`]{@link Noticia#estahPublicada} da classe {@link Noticia}
-   * * `sort()`: para ordenar as notícias de forma decrescente pela data
    * 
    * @param q A quantidade notícias para retornar (padrão = `null`, para retornar todas as notícias)
    * @param excluirDestaque Indica se deve ou não excluir a notícia de destaque da lista (padrão = `true`)
    * @returns Lista das notícias publicadas
    */
   public publicadas(q: number = null, excluirDestaque: boolean = false) {
+    const options = this.getHeaders();
     let url = this.API_URL + '?publicada=true';
     if (excluirDestaque) {
       url += '&destaque=false';
     }
-    return this.http.get(url);
+    return this.http.get(url, options);
   }
 
   /**
@@ -58,20 +73,9 @@ export class NoticiasService {
    * @returns A notícia encontrada
    */
   public encontrar(id: number) {
+    const options = this.getHeaders();
     const url = this.API_URL + id + '/';
-    return this.http.get(url)
-      .pipe(
-        map((noticia: Noticia) => {
-          return forkJoin(of(noticia),
-            this.http.get(noticia.autor));
-        }),
-        concatAll(),
-        map(([noticia, autor]) => {
-          noticia.autor = autor;
-          return noticia;
-        }),
-        tap(r => console.log(r))
-      );
+    return this.http.get(url, options);
   }
 
   /**
@@ -80,17 +84,25 @@ export class NoticiasService {
    * @returns A notícia encontrada
    */
   public noticiaDestaque() {
+    const options = this.getHeaders();
     const url = this.API_URL + '?destaque=true';
-    return this.http.get(url)
+    return this.http.get(url, options)
       .pipe(
-        map((noticias: Noticia[]) => {
-          if (noticias.length > 0) {
-            return noticias[0];
-          } else {
-            return [];
-          }
-        })
+        take(1)
       );
   }
 
+  public salvar(titulo: string, resumo: string, conteudo: string, autor: any, data: string, publicada: boolean, destaque: boolean) {
+    const options = this.getHeaders();
+    const noticia = {
+      titulo: titulo,
+      resumo: resumo,
+      conteudo: conteudo,
+      autor: autor,
+      data: data,
+      publicada: publicada,
+      destaque: destaque
+    };
+    return this.http.post(this.API_URL, noticia, options);
+  }
 }

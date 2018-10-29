@@ -17,7 +17,7 @@ export class AutoresService {
     return this.http.get(this.API_URL);
   }
 
-  public encontrar(id: number): Observable<Autor> {
-    return this.http.get<Autor>(this.API_URL + id + '/');
+  public encontrar(id: number) {
+    return this.http.get(this.API_URL + id + '/');
   }
 }

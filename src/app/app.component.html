@@ -18,6 +18,22 @@
           <a class="nav-link" routerLink="sobre">Sobre</a>
         </li>
       </ul>
+      <ul *ngIf="!auth.estahLogado()" class="navbar-nav ml-auto">
+        <li class="nav-item right" routerLinkActive="active">
+          <a class="nav-link" routerLink="login">Login</a>
+        </li>
+      </ul>
+      <ul *ngIf="auth.estahLogado()" class="navbar-nav ml-auto">
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link" routerLink="admin">Dashboard</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link" routerLink="admin/noticias">Notícias</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0)" (click)="sair()">Sair</a>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>

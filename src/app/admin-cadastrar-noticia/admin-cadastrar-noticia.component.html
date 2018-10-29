@@ -1,0 +1,31 @@
+<h1>Cadastrar notícia</h1>
+<br>
+<form class="mt-1" #cadastro="ngForm" (submit)="salvar()">
+  <div *ngIf="salvar_ok" class="alert alert-success">
+    Notícia salva com sucesso!
+  </div>
+  <div *ngIf="salvar_erro" class="alert alert-warning">
+    Não foi possível salvar a notícia. Tente novamente dentro de instantes.
+  </div>
+  <div class="form-group">
+    <label for="titulo">Título</label>
+    <input type="text" class="form-control" name="titulo" id="titulo" [(ngModel)]="titulo" required>
+  </div>
+  <div class="form-group">
+    <label for="resumo">Resumo</label>
+    <textarea name="resumo" class="form-control" id="resumo" [(ngModel)]="resumo" required></textarea>
+  </div>
+  <div class="form-group">
+    <label for="conteudo">Conteúdo</label>
+    <textarea name="conteudo" class="form-control" id="conteudo" [(ngModel)]="conteudo" required></textarea>
+  </div>
+  <div class="form-group">
+    <label>Autor</label>
+    <select name="autor" class="form-control" id="autor" [(ngModel)]="autor" required>
+      <option *ngFor="let a of autores | async" [value]="a.url">{{a.nome}}</option>
+    </select>
+  </div>
+  <div>
+    <button class="btn btn-primary">Salvar</button>
+  </div>
+</form>
