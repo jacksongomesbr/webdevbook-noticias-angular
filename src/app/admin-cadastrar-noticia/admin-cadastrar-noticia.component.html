@@ -25,6 +25,22 @@
       <option *ngFor="let a of autores | async" [value]="a.url">{{a.nome}}</option>
     </select>
   </div>
+  <div class="form-group">
+    <label for="data">Data</label>
+    <input name="data" type="datetime-local" class="form-control" id="data" [(ngModel)]="data" required>
+  </div>
+  <div class="form-group form-check">
+    <label>
+    <input type="checkbox" name="publicada" class="form-check-input" [(ngModel)]="publicada">
+    Publicada?
+    </label>
+  </div>
+  <div class="form-group form-check">
+      <label>
+      <input type="checkbox" name="destaque" class="form-check-input" [(ngModel)]="destaque">
+      Destaque?
+      </label>
+    </div>  
   <div>
     <button class="btn btn-primary">Salvar</button>
   </div>
