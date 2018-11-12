@@ -9,11 +9,44 @@
   </div>
   <div class="form-group">
     <label for="titulo">Título</label>
-    <input type="text" class="form-control" name="titulo" id="titulo" [(ngModel)]="titulo" required>
+    <input type="text" name="titulo" id="titulo" [(ngModel)]="titulo" #campo_titulo="ngModel" class="form-control form-control-lg"
+      [class.is-invalid]="campo_titulo.invalid && (campo_titulo.dirty || campo_titulo.touched)" (change)="slugify_titulo()"
+      required minlength="16">
+    <small class="form-text text-muted">
+      Procure definir um título que seja bastante objetivo e claro.
+    </small>
+    <div *ngIf="campo_titulo.invalid && (campo_titulo.dirty || campo_titulo.touched)" class="invalid-feedback">
+      <span *ngIf="campo_titulo.errors.required">
+        O título é obrigatório.
+      </span>
+      <span *ngIf="campo_titulo.errors.minlength">
+        O título precisa ter, pelo menos, 16 caracteres.
+      </span>
+    </div>
+    <small *ngIf="campo_titulo.valid && (campo_titulo.dirty || campo_titulo.touched)" class="form-text text-muted">
+      <strong>Esta notícia será acessada como: http://localhost:4200/noticias/{{slug}}</strong>
+    </small>
   </div>
   <div class="form-group">
     <label for="resumo">Resumo</label>
-    <textarea name="resumo" class="form-control" id="resumo" [(ngModel)]="resumo" required></textarea>
+    <small class="form-text text-muted mt-0 mb-2">
+      O resumo é uma parte importante da publicação. Seja objetivo e claro, procurando chamar a atenção do leitor para
+      a notícia.
+    </small>
+    <textarea name="resumo" class="form-control" id="resumo" [(ngModel)]="resumo" #campo_resumo="ngModel"
+      [class.is-invalid]="campo_resumo.invalid && (campo_resumo.dirty || campo_resumo.touched)" required minlength="64"
+      maxlength="256"></textarea>
+    <div *ngIf="campo_resumo.invalid && (campo_resumo.dirty || campo_resumo.touched)" class="invalid-feedback">
+      <span *ngIf="campo_resumo.errors.required">
+        O resumo é obrigatório.
+      </span>
+      <span *ngIf="campo_resumo.errors.minlength">
+        O resumo deve ter, pelo menos, 64 caracteres.
+      </span>
+      <span *ngIf="campo_resumo.errors.maxlength">
+        O resumo deve ter, no máximo, 256 caracteres.
+      </span>
+    </div>
   </div>
   <div class="form-group">
     <label for="conteudo">Conteúdo</label>
@@ -22,7 +55,7 @@
   <div class="form-group">
     <label>Autor</label>
     <select name="autor" class="form-control" id="autor" [(ngModel)]="autor" required>
-      <option *ngFor="let a of autores | async" [value]="a.url">{{a.nome}}</option>
+      <option *ngFor="let a of autores | async" [value]="a.id">{{a.nome}}</option>
     </select>
   </div>
   <div class="form-group">
@@ -31,17 +64,20 @@
   </div>
   <div class="form-group form-check">
     <label>
-    <input type="checkbox" name="publicada" class="form-check-input" [(ngModel)]="publicada">
-    Publicada?
+      <input type="checkbox" name="publicada" class="form-check-input" [(ngModel)]="publicada">
+      Publicada?
     </label>
   </div>
   <div class="form-group form-check">
-      <label>
+    <label>
       <input type="checkbox" name="destaque" class="form-check-input" [(ngModel)]="destaque">
       Destaque?
-      </label>
-    </div>  
+    </label>
+  </div>
+  <div class="form-group">
+    <input type="file" name="arquivo" class="form-control" (change)="selecionarArquivo($event)">
+  </div>
   <div>
-    <button class="btn btn-primary">Salvar</button>
+    <button class="btn btn-primary" [disabled]="!cadastro.form.valid">Salvar</button>
   </div>
 </form>

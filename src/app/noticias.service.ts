@@ -98,11 +98,27 @@ export class NoticiasService {
       titulo: titulo,
       resumo: resumo,
       conteudo: conteudo,
-      autor: autor,
+      autor: {
+        id: autor
+      },
       data: data,
       publicada: publicada,
-      destaque: destaque
+      destaque: destaque,
+      categorias: [],
+      tags: []
     };
     return this.http.post(this.API_URL, noticia, options);
+  }
+
+  public salvarFoto(id: any, foto: any) {
+    const credenciais = this.auth.getCredenciais();
+    const options = {
+      headers: new HttpHeaders({
+        'Authorization': 'Basic ' + btoa(`${credenciais.username}:${credenciais.password}`)
+      })
+    };
+    const dados = new FormData();
+    dados.append('foto', foto);
+    return this.http.put(this.API_URL + id + '/foto/', dados, options);
   }
 }
