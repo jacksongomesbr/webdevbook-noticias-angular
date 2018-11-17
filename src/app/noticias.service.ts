@@ -24,9 +24,27 @@ export class NoticiasService {
    * 
    * @returns Lista de todas as notícias
    */
-  public todas() {
+  public todas(o: string = 'id', p: string = null, autor: number = null, filtro_publicada: boolean = null) {
+    let url = this.API_URL;
+    let params = [];
+    if (o) {
+      params.push('ordering=' + o);
+    }
+    if (p) {
+      params.push('titulo=' + p);
+    }
+    if (autor) {
+      params.push('autor=' + autor);
+    }
+    if (filtro_publicada != null) {
+      params.push('publicada=' + filtro_publicada);
+    }
+    if (params.length > 0) {
+      url += '?';
+      url += params.join('&');
+    }
     const options = this.getHeaders();
-    return this.http.get(this.API_URL, options)
+    return this.http.get(url, options)
       .pipe(
         tap(r => console.log(r))
       );
@@ -120,5 +138,15 @@ export class NoticiasService {
     const dados = new FormData();
     dados.append('foto', foto);
     return this.http.put(this.API_URL + id + '/foto/', dados, options);
+  }
+
+  public excluir(id) {
+    const credenciais = this.auth.getCredenciais();
+    const options = {
+      headers: new HttpHeaders({
+        'Authorization': 'Basic ' + btoa(`${credenciais.username}:${credenciais.password}`)
+      })
+    };
+    return this.http.delete(this.API_URL + id + '/', options);
   }
 }

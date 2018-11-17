@@ -3,21 +3,99 @@
 </div>
 <h1>Notícias</h1>
 <hr>
-<table class="table mt-1 table-bordered table-hover table-striped">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Título</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let noticia of noticias$ | async">
-      <td>
-        {{noticia.id}}
-      </td>
-      <td>
-        {{noticia.titulo}}
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="alert alert-success alert-dismissible fade show" *ngIf="resultado_excluir">
+  Notícia excluída com sucesso.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="alert alert-warning alert-dismissible fade show" *ngIf="resultado_excluir === false">
+  Não foi possível excluir a notícia.
+  <p class="small text-muted">{{ erro_excluir }}</p>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="row">
+  <div class="col-9">
+    <form #formpesquisa="ngForm" class="form" (submit)="carregarDados()">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label for="pesquisa" class="input-group-text">Pesquisar por título</label>
+        </div>
+        <input type="text" id="pesquisa" name="pesquisa" [(ngModel)]="pesquisa" class="form-control">
+        <div class="input-group-append">
+          <button class="btn btn-default" *ngIf="pesquisa" (click)="pesquisa = null; carregarDados()"><i class="fa fa-ban"></i></button>
+          <button class="btn btn-default"><i class="fa fa-search"></i></button>
+        </div>
+      </div>
+    </form>
+    <table class="table mt-1 table-bordered table-hover table-striped">
+      <thead>
+        <tr>
+          <th width="5%">
+            <a href="javascript:void(null)" (click)="ordenarPor('id')">#</a>
+          </th>
+          <th>
+            <a href="javascript:void(null)" (click)="ordenarPor('titulo')">Título</a>
+          </th>
+          <th width="30%">
+            <a href="javascript:void(null)" (click)="ordenarPor('autor')">Autor</a>
+          </th>
+          <th width="10%">
+            Ações
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let noticia of noticias$ | async">
+          <td>
+            {{noticia.id}}
+          </td>
+          <td>
+            {{noticia.titulo}}
+          </td>
+          <td>
+            {{noticia.autor.nome}}
+          </td>
+          <td>
+            <button class="btn btn-sm btn-danger" (click)="excluir(noticia)"><i class="fa fa-trash-o"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-3">
+    <h5>Filtrar lista</h5>
+    <hr>
+    <div class="mb-3">
+      <h6>Por autor</h6>
+      <form class="form" #formfiltroautor="ngForm" (submit)="carregarDados()">
+        <div class="input-group mb-3">
+          <select name="filtrar_por_autor" class="form-control" [(ngModel)]="filtrar_por_autor" required>
+            <option value="" selected>Todos</option>
+            <option *ngFor="let autor of autores$ | async" [value]="autor.id">
+              {{ autor.nome }}
+            </option>
+          </select>
+          <div class="input-group-append">
+            <button class="btn btn-default"><i class="fa fa-filter"></i></button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="mb-3">
+      <h6>Por notícia publicada</h6>
+      <ul class="list-group">
+        <a class="list-group-item list-group-item-action p-2" [class.active]="filtrar_por_publicada == null" href="javascript:void(null)"
+          (click)="filtrarPublicada(null)">Todas</a>
+        <a class="list-group-item list-group-item-action p-2" [class.active]="filtrar_por_publicada === true" href="javascript:void(null)"
+          (click)="filtrarPublicada(true)">Apenas
+          publicadas</a>
+        <a class="list-group-item list-group-item-action p-2" [class.active]="filtrar_por_publicada === false" href="javascript:void(null)"
+          (click)="filtrarPublicada(false)">Apenas não publicadas</a>
+      </ul>
+    </div>
+  </div>
+</div>

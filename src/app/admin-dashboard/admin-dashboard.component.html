@@ -2,22 +2,38 @@
 <hr>
 
 <div class="mt-1 card-deck">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Total de autores</h5>
-        <p class="card-text" style="font-size: 3em">4</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Total de notícias</h5>
-        <p class="card-text" style="font-size: 3em">20</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Total de notícias publicadas</h5>
-        <p class="card-text"><span  style="font-size: 3em">15</span> <span>(75%)</span></p>
-      </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Total de autores</h5>
+      <p class="card-text" style="font-size: 3em; font-weight: 700">{{total_autores}}</p>
     </div>
   </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Total de notícias</h5>
+      <p class="card-text" style="font-size: 3em; font-weight: 700">{{total_noticias}}</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Total de notícias publicadas</h5>
+      <p class="card-text">
+        <span style="font-size: 3em; font-weight: 700">{{total_noticias_publicadas}}</span>
+        <span class="badge badge-success badge-pill ml-2">{{porcentagem_noticias_publicadas}}%</span></p>
+    </div>
+  </div>
+</div>
+
+<div class="mt-4">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Ranking de autores</h5>
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let item of ranking_autores">
+          {{item.autor.nome}}
+          <span class="badge badge-primary badge-pill">{{item.quantidade}}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
