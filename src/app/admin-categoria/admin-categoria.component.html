@@ -1,0 +1,67 @@
+<div class="float-right">
+  <a routerLink="/admin/categorias/cadastrar" class="btn btn-primary">Cadastrar</a>
+</div>
+<h1>Categorias</h1>
+<hr>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+            <div class="input-group" id="adv-search">
+                <input type="text" class="form-control" placeholder="Procurar por..." />
+                <button type="button" class="btn btn-primary"><i class="fa fa-search"></i></button>
+            </div>
+    </div>
+  </div>
+
+</div>
+<table class="table mt-1 table-bordered table-hover table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nome</th>
+      <th>Slug</th>
+      <th>Descrição</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let categoria of categorias$ | async">
+      <td>
+        {{categoria.id}}
+      </td>
+      <td>
+        {{categoria.nome}}
+      </td>
+      <td>
+        {{categoria.slug}}
+      </td>
+      <td>
+        {{categoria.descricao}}
+      </td>
+      <td>
+       <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+  Excluir
+</button>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Aviso</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Voçe realmente deseja excluir a categoria: {{categoria.nome}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-success" (click)="excluir(categoria.id)">Sim</button>
+      </div>
+    </div>
+  </div>
+</div>
+      </td>
+    </tr>
+  </tbody>
+</table>
