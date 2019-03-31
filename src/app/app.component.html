@@ -1,32 +1,36 @@
-<h1>Gerenciador de notícias</h1>
-<h2>Notícias recentes</h2>
-<p>Clique no título da notícia para expandir</p>
-<div>
-  <ul>
-    <li *ngFor="let noticia of noticias">
-      <p (click)="mostrar(noticia)">{{ noticia.titulo }}</p>
-      <p *ngIf="noticia.visivel">
-        {{ noticia.conteudo }}
-        <br> -------------
-        <br>
-        <button (click)="fechar(noticia)">Fechar</button>
-      </p>
-    </li>
-  </ul>
-</div>
+<div class="container">
+  <h1>Gerenciador de notícias</h1>
+  <h2>Notícias recentes</h2>
+  <p>Clique no título da notícia para expandir</p>
+  <div>
+    <ul>
+      <li *ngFor="let noticia of noticias">
+        <p (click)="mostrar(noticia)">{{ noticia.titulo }}</p>
+        <p *ngIf="noticia.visivel">
+          {{ noticia.conteudo }}
+          <br> -------------
+          <br>
+          <button class="btn btn-primary" (click)="fechar(noticia)">Fechar</button>
+        </p>
+      </li>
+    </ul>
+  </div>
 
-<h2>Cadastrar notícia</h2>
-<form #cadastro="ngForm" (submit)="salvar()">
-  <div>
-    <label for="titulo">Título</label>
-    <input type="text" id="titulo" name="titulo" [(ngModel)]="titulo" required>
-  </div>
-  <div>
-    <label for="conteudo">Conteúdo</label>
-    <textarea id="conteudo" name="conteudo" cols="80" rows="5" [(ngModel)]="conteudo" required></textarea>
-  </div>
-  <div>
-    <button type="submit" [disabled]="!cadastro.form.valid">Salvar</button>
-    <button type="reset" formnovalidate>Limpar</button>
-  </div>
-</form>
+  <h2> <i class="fa fa-plus-circle"></i> Cadastrar notícia</h2>
+  <form #cadastro="ngForm" (submit)="salvar()">
+    <div class="form-group">
+      <label for="titulo">Título</label>
+      <input type="text" id="titulo" name="titulo" [(ngModel)]="titulo" class="form-control" required>
+      <small class="form-text text-muted">Título completo da notícia.</small>
+    </div>
+    <div class="form-group">
+      <label for="conteudo">Conteúdo</label>
+      <textarea id="conteudo" name="conteudo" cols="80" rows="5" [(ngModel)]="conteudo" class="form-control"
+        required></textarea>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary" [disabled]="!cadastro.form.valid">Salvar</button>
+      <button type="reset" class="btn btn-secondary" formnovalidate>Limpar</button>
+    </div>
+  </form>
+</div>
