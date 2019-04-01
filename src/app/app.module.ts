@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { TituloUnicoValidatorDirective } from './titulo-unico-validator.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TituloUnicoValidatorDirective
   ],
   imports: [
     BrowserModule,

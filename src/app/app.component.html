@@ -4,7 +4,7 @@
   <p>Clique no título da notícia para expandir</p>
   <div>
     <ul>
-      <li *ngFor="let noticia of noticias">
+      <li *ngFor="let noticia of noticias.lista()">
         <p (click)="mostrar(noticia)">{{ noticia.titulo }}</p>
         <p *ngIf="noticia.visivel">
           {{ noticia.conteudo }}
@@ -17,20 +17,76 @@
   </div>
 
   <h2> <i class="fa fa-plus-circle"></i> Cadastrar notícia</h2>
-  <form #cadastro="ngForm" (submit)="salvar()">
+  <form #cadastro="ngForm" (submit)="salvar(cadastro)">
     <div class="form-group">
       <label for="titulo">Título</label>
-      <input type="text" id="titulo" name="titulo" [(ngModel)]="titulo" class="form-control" required>
+      <input type="text" id="titulo" name="titulo" [(ngModel)]="titulo" class="form-control form-control-lg"
+        #campo_titulo="ngModel" required minlength="16" maxlength="140" appTituloUnicoValidator
+        [class.is-invalid]="campo_titulo.invalid && (campo_titulo.dirty || campo_titulo.touched)">
       <small class="form-text text-muted">Título completo da notícia.</small>
+      <div *ngIf="campo_titulo.invalid && (campo_titulo.dirty || campo_titulo.touched)" class="invalid-feedback">
+        <span *ngIf="campo_titulo.errors.required">
+          O título é obrigatório.
+        </span>
+        <span *ngIf="campo_titulo.errors.minlength">
+          O título precisa ter, pelo menos, 16 caracteres.
+        </span>
+        <span *ngIf="campo_titulo.errors.maxlength">
+          O título deve ter, no máximo, 140 caracteres.
+        </span>
+        <span *ngIf="campo_titulo.errors.tituloUnico">
+          Já existe uma notícia com esse título.
+        </span>
+      </div>
     </div>
     <div class="form-group">
       <label for="conteudo">Conteúdo</label>
+      <small class="form-text text-muted">Utilize a caixa de texto a seguir para informar o conteúdo da notícia.</small>
       <textarea id="conteudo" name="conteudo" cols="80" rows="5" [(ngModel)]="conteudo" class="form-control"
-        required></textarea>
+        #campo_conteudo="ngModel" minlength="140" maxlength="8000" required
+        [class.is-invalid]="campo_conteudo.invalid && (campo_conteudo.dirty || campo_conteudo.touched)"></textarea>
+      <div *ngIf="campo_conteudo.invalid && (campo_conteudo.dirty || campo_conteudo.touched)" class="invalid-feedback">
+        <span *ngIf="campo_conteudo.errors.required">
+          O conteúdo da notícia é obrigatório.
+        </span>
+        <span *ngIf="campo_conteudo.errors.minlength">
+          O conteúdo da notícia precisa ter, pelo menos, 140 caracteres.
+        </span>
+        <span *ngIf="campo_conteudo.errors.maxlength">
+          O conteúdo da notícia deve ter, no máximo, 8.000 caracteres.
+        </span>
+      </div>
+
+    </div>
+    <div class="form-group">
+      <label>Categoria</label>
+      <select class="form-control" id="categoria" name="categoria" [(ngModel)]="categoria" #campo_categoria="ngModel"
+        required [class.is-invalid]="campo_categoria.invalid && (campo_categoria.dirty || campo_categoria.touched)">
+        <option value="" selected="selected">Selecione uma categoria</option>
+        <option *ngFor="let categoria of noticias.listaDeCategorias()">{{ categoria }}</option>
+      </select>
+      <div *ngIf="campo_categoria.invalid && (campo_categoria.dirty || campo_categoria.touched)"
+        class="invalid-feedback">
+        <span *ngIf="campo_categoria.errors.required">
+          Por favor, informe a categoria da notícia.
+        </span>
+      </div>
     </div>
     <div>
       <button type="submit" class="btn btn-primary" [disabled]="!cadastro.form.valid">Salvar</button>
       <button type="reset" class="btn btn-secondary" formnovalidate>Limpar</button>
     </div>
   </form>
+
+  <div>
+    <h3>Estatísticas de categorias de notícias</h3>
+    <table class="table table-bordered table-sm">
+      <tbody>
+        <tr *ngFor="let estatistica of noticias.estatisticasDeCategorias()">
+          <td>{{ estatistica.nome }}</td>
+          <td>{{ estatistica.valor }}
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
